@@ -1,0 +1,40 @@
+{
+  "name": "homespring.js",
+  "version": "1.0.0",
+  "description": "A JS Homespring interpreter",
+  "main": "lib/homespring.js",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "grunt": "~1.0.1",
+    "grunt-contrib-uglify": "~1.0.1",
+    "grunt-karma": "~0.12.2",
+    "jasmine-core": "~2.4.1",
+    "karma": "~0.13.22",
+    "karma-chrome-launcher": "~0.2.0",
+    "karma-jasmine": "~0.3.5",
+    "karma-phantomjs-launcher": "~1.0.0",
+    "karma-story-reporter": "^0.3.1",
+    "phantomjs-prebuilt": "~2.1.7"
+  },
+  "scripts": {
+    "test": "grunt karma"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/iamcal/homespring.js.git"
+  },
+  "keywords": [
+    "homespring",
+    "salmon",
+    "rivers",
+    "esolang"
+  ],
+  "author": "Cal Henderson <cal@iamcal.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iamcal/homespring.js/issues"
+  },
+  "homepage": "https://github.com/iamcal/homespring.js"
+}

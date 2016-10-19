@@ -4,6 +4,7 @@ module.exports = function(config) {
     frameworks: ['jasmine'],
     files: [
       'lib/homespring.min.js',
+      'test/helpers.js',
       'test/*.js'
     ],
     exclude: [

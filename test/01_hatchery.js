@@ -28,5 +28,6 @@ describe("keyword: hatchery", function(){
 		expect(salmon.direction).toBe(HS.const.UPSTREAM);
 	});
 
+	// TODO: test that the hatchery only fires in the hatch segment of the fish tick
 });
 

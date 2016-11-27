@@ -31,6 +31,7 @@ describe("keyword: hatchery", function(){
 	it("creates salmon during the hatch segment of the fish tick", function(){
 
 		// TODO
+		expect(true).toBe(false);
 	});
 });
 

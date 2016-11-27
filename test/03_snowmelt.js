@@ -13,6 +13,8 @@ describe("keyword: snowmelt", function(){
 	it("operates at the end of the snow tick", function(){
 
 		// TODO
+		expect(true).toBe(false);
+
 		// this seems weirdly worded - the entire snow tick is about snow
 		// propogation and a snowmelt node should be first/early.
 	});

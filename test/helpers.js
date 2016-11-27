@@ -5,7 +5,7 @@ HS.Program.prototype.findFirstNode = function(name){
 
 	for (var i=0; i<this.tree.nodes.length; i++){
 
-		if (this.tree.nodes[i].name.toLowerCase() == name) return this.tree.nodes[i];
+		if (this.tree.nodes[i].lname == name) return this.tree.nodes[i];
 	}
 
 	return null;

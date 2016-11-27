@@ -10,6 +10,7 @@ describe("keyword: hydro power", function(){
 		expect(p.findFirstNode('force field').isPowered()).toBe(true);
 		expect(p.findFirstNode('hydro power').is_watered).toBe(false);
 		expect(p.findFirstNode('hydro power').isPowered()).toBe(false);
+		expect(p.findFirstNode('hydro power').generates_power).toBe(false);
 	});
 
 	it("creates electricity when watered", function(){
@@ -19,6 +20,7 @@ describe("keyword: hydro power", function(){
 
 		expect(p.findFirstNode('hydro power').is_watered).toBe(true);
 		expect(p.findFirstNode('hydro power').isPowered()).toBe(true);
+		expect(p.findFirstNode('hydro power').generates_power).toBe(true);
 	});
 
 	it("can be destroyed by snowmelt", function(){

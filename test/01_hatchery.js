@@ -30,8 +30,19 @@ describe("keyword: hatchery", function(){
 
 	it("creates salmon during the hatch segment of the fish tick", function(){
 
-		// TODO
-		expect(true).toBe(false);
+		var p = new HS.Program('hatchery powers');
+
+		p.snowTick();
+		p.waterTick();
+		p.powerTick();
+		p.fishTickDown();
+		p.fishTickUp();
+
+		expect(p.findFirstNode('hatchery').salmon.length).toBe(0);
+
+		p.fishTickHatch();
+
+		expect(p.findFirstNode('hatchery').salmon.length).toBe(1);
 	});
 });
 

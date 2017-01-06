@@ -21,3 +21,12 @@ HS.Node.prototype.dumpChildren = function(){
 
 	return names.join(',');
 };
+
+HS.Node.prototype.containsSalmon = function(s){
+
+	for (var i=0; i<this.salmon.length; i++){
+		if (this.salmon[i] == s) return true;
+	}
+
+	return false;
+};

@@ -19,3 +19,12 @@ We can use the interpreter to model the program:
     console.log(output);
 
 The code (unsurprisingly) outputs `Hello World!\n`, as is appropriate.
+
+
+## Other links
+
+* Esolang page: https://esolangs.org/wiki/Homespring
+* Joe Neeman's homepage: http://xeny.net/Homespring
+* Original Ocaml version (mirror): https://github.com/jneem/homespring
+* Another JS implementation: https://github.com/benibela/home-river
+* My (partial) Perl implementation: http://search.cpan.org/dist/Language-Homespring/Homespring.pm

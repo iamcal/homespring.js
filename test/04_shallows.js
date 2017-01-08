@@ -5,9 +5,7 @@ describe("keyword: shallows", function(){
 	it("slows mature upstream salmon", function(){
 
 		var p = new HS.Program('foo shallows bar');
-		var s = new HS.Salmon();
-		s.age = HS.const.MATURE;
-		s.direction = HS.const.UPSTREAM;
+		var s = new HS.Salmon('', HS.const.MATURE, HS.const.UPSTREAM);
 
 		p.findFirstNode('foo').fishEnters(s);
 
@@ -22,9 +20,7 @@ describe("keyword: shallows", function(){
 	it("slows mature downstream salmon", function(){
 
 		var p = new HS.Program('foo shallows bar');
-		var s = new HS.Salmon();
-		s.age = HS.const.MATURE;
-		s.direction = HS.const.DOWNSTREAM;
+		var s = new HS.Salmon('', HS.const.MATURE, HS.const.DOWNSTREAM);
 
 		p.findFirstNode('bar').fishEnters(s);
 

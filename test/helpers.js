@@ -44,27 +44,3 @@ HS.Salmon.prototype.findNode = function(){
 
 	return null;
 };
-
-HS.Salmon.prototype.justSpawned = function(){
-	var self = this;
-
-	// When a salmon spawns, it becomes mature and its direction becomes downstream.
-	// A new salmon is created at the current node. The new salmon is young,
-	// downstream and its name is the name of the current node.
-
-	if (self.age != HS.const.MATURE) return false;
-	if (self.direction != HS.const.DOWNSTREAM) return false;
-
-	var n = self.findNode();
-	if (!n) return false;
-
-	for (var i=0; i<n.salmon.length; i++){
-		if (self == n.salmon[i]) continue;
-		if (n.salmon[i].age != HS.const.YOUNG) continue;
-		if (n.salmon[i].direction != HS.const.DOWNSTREAM) continue;
-		if (n.salmon[i].name != self.name) continue;
-		return true;
-	}
-
-	return false;
-};

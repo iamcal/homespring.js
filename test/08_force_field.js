@@ -13,7 +13,7 @@ describe("keyword: force field", function(){
 		expect(s.findNode().name).toBe('force field');
 		p.tick();
 		expect(s.findNode().name).toBe('force field');
-		expect(s.justSpawned()).toBe(true);
+		expect(s.justSpawned).toBe(true);
 
 
 		// mature/upstream
@@ -25,7 +25,7 @@ describe("keyword: force field", function(){
 		expect(s.findNode().name).toBe('force field');
 		p.tick();
 		expect(s.findNode().name).toBe('force field');
-		expect(s.justSpawned()).toBe(true);
+		expect(s.justSpawned).toBe(true);
 
 
 		// young/downstream

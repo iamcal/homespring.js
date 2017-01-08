@@ -3,9 +3,9 @@
 
 HS.Program.prototype.findFirstNode = function(name){
 
-	for (var i=0; i<this.tree.nodes.length; i++){
+	for (var i=0; i<this.nodes.length; i++){
 
-		if (this.tree.nodes[i].lname == name) return this.tree.nodes[i];
+		if (this.nodes[i].lname == name) return this.nodes[i];
 	}
 
 	return null;
@@ -29,4 +29,18 @@ HS.Node.prototype.containsSalmon = function(s){
 	}
 
 	return false;
+};
+
+HS.Salmon.prototype.findNode = function(){
+	var self = this;
+
+	for (var i=0; i<self.program.nodes.length; i++){
+		var n = self.program.nodes[i];
+
+		for (var j=0; j<n.salmon.length; j++){
+			if (n.salmon[j] == self) return n;
+		}
+	}
+
+	return null;
 };

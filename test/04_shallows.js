@@ -5,31 +5,31 @@ describe("keyword: shallows", function(){
 	it("slows mature upstream salmon", function(){
 
 		var p = new HS.Program('foo shallows bar');
-		var s = new HS.Salmon('', HS.const.MATURE, HS.const.UPSTREAM);
+		var s = new HS.Salmon(p, '', HS.const.MATURE, HS.const.UPSTREAM);
 
 		p.findFirstNode('foo').fishEnters(s);
 
 		p.tick();
-		expect(p.findFirstNode('shallows').containsSalmon(s)).toBe(true);
+		expect(s.findNode().name).toBe('shallows');
 		p.tick();
-		expect(p.findFirstNode('shallows').containsSalmon(s)).toBe(true);
+		expect(s.findNode().name).toBe('shallows');
 		p.tick();
-		expect(p.findFirstNode('bar').containsSalmon(s)).toBe(true);
+		expect(s.findNode().name).toBe('bar');
 	});
 
 	it("slows mature downstream salmon", function(){
 
 		var p = new HS.Program('foo shallows bar');
-		var s = new HS.Salmon('', HS.const.MATURE, HS.const.DOWNSTREAM);
+		var s = new HS.Salmon(p, '', HS.const.MATURE, HS.const.DOWNSTREAM);
 
 		p.findFirstNode('bar').fishEnters(s);
 
 		p.tick();
-		expect(p.findFirstNode('shallows').containsSalmon(s)).toBe(true);
+		expect(s.findNode().name).toBe('shallows');
 		p.tick();
-		expect(p.findFirstNode('shallows').containsSalmon(s)).toBe(true);
+		expect(s.findNode().name).toBe('shallows');
 		p.tick();
-		expect(p.findFirstNode('foo').containsSalmon(s)).toBe(true);
+		expect(s.findNode().name).toBe('foo');
 	});
 
 	it("does not slow young upstream salmon", function(){

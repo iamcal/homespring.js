@@ -117,11 +117,25 @@ describe("keyword: force field", function(){
 
 
 	it("blocks snowmelt when powered", function(){
-		expect(true).toBe(false);
+
+		var p = new HS.Program('foo force. field powers snowmelt');
+
+		// we need to double tick because snow comes before the power tick
+
+		p.tick();
+		expect(p.findFirstNode('foo').is_snowy).toBe(true);
+		p.tick();
+		expect(p.findFirstNode('foo').is_snowy).toBe(false);
 	});
 
 	it("doesn't block snowmelt when unpowered", function(){
-		expect(true).toBe(false);
+
+		var p = new HS.Program('foo force. field snowmelt');
+
+		p.tick();
+		expect(p.findFirstNode('foo').is_snowy).toBe(true);
+		p.tick();
+		expect(p.findFirstNode('foo').is_snowy).toBe(true);
 	});
 
 });

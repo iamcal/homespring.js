@@ -25,6 +25,7 @@ The code (unsurprisingly) outputs `Hello World!\n`, as is appropriate.
 
 * Esolang page: https://esolangs.org/wiki/Homespring
 * Joe Neeman's homepage: http://xeny.net/Homespring
-* Original Ocaml version (mirror): https://github.com/jneem/homespring
-* Another JS implementation: https://github.com/benibela/home-river
+* Joe Neeman's Ocaml version): https://github.com/jneem/homespring
+* Another JS implementation: https://github.com/quinkennedy/Homespring
+* Alternative syntax processor: https://github.com/benibela/home-river
 * My (partial) Perl implementation: http://search.cpan.org/dist/Language-Homespring/Homespring.pm

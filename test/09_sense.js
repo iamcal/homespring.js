@@ -7,23 +7,22 @@ describe("keyword: sense", function(){
 		var p = new HS.Program('foo sense powers');
 		var s = new HS.Salmon(p, '', HS.const.MATURE, HS.const.UPSTREAM);
 
+		p.tick();
 		p.findFirstNode('sense').fishEnters(s);
 
-		p.tick();
 		expect(p.findFirstNode('foo').isPowered()).toBe(false);
 	});
 
 	it("blocks electicity with mixed salmon", function(){
 
 		var p = new HS.Program('foo sense powers');
-
 		var s1 = new HS.Salmon(p, '', HS.const.MATURE, HS.const.UPSTREAM);
-		p.findFirstNode('sense').fishEnters(s1);
-
 		var s2 = new HS.Salmon(p, '', HS.const.YOUNG, HS.const.DOWNSTREAM);
-		p.findFirstNode('sense').fishEnters(s2);
 
 		p.tick();
+		p.findFirstNode('sense').fishEnters(s1);
+		p.findFirstNode('sense').fishEnters(s2);
+
 		expect(p.findFirstNode('foo').isPowered()).toBe(false);
 	});
 
@@ -32,9 +31,9 @@ describe("keyword: sense", function(){
 		var p = new HS.Program('foo sense powers');
 		var s = new HS.Salmon(p, '', HS.const.YOUNG, HS.const.UPSTREAM);
 
+		p.tick();
 		p.findFirstNode('sense').fishEnters(s);
 
-		p.tick();
 		expect(p.findFirstNode('foo').isPowered()).toBe(true);
 	});
 

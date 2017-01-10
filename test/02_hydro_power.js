@@ -27,6 +27,7 @@ describe("keyword: hydro power", function(){
 
 		var p = new HS.Program('hydro. power snowmelt');
 		p.tick();
+		p.tick();
 
 		expect(p.findFirstNode('hydro power')).toBe(null);
 	});

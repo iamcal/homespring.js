@@ -120,10 +120,11 @@ describe("keyword: force field", function(){
 
 		var p = new HS.Program('foo force. field powers snowmelt');
 
-		// we need to double tick because snow comes before the power tick
+		// snows needs one tick per node, including snowmelt
 
 		p.tick();
-		expect(p.findFirstNode('foo').is_snowy).toBe(true);
+		p.tick();
+		p.tick();
 		p.tick();
 		expect(p.findFirstNode('foo').is_snowy).toBe(false);
 	});
@@ -133,7 +134,7 @@ describe("keyword: force field", function(){
 		var p = new HS.Program('foo force. field snowmelt');
 
 		p.tick();
-		expect(p.findFirstNode('foo').is_snowy).toBe(true);
+		p.tick();
 		p.tick();
 		expect(p.findFirstNode('foo').is_snowy).toBe(true);
 	});

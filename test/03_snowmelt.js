@@ -7,16 +7,23 @@ describe("keyword: snowmelt", function(){
 		var p = new HS.Program('foo snowmelt');
 
 		p.tick();
+		p.tick();
 		expect(p.findFirstNode('foo').is_snowy).toBe(true);
 	});
 
 	it("operates at the end of the snow tick", function(){
 
-		// TODO
-		expect(true).toBe(false);
-
 		// this seems weirdly worded - the entire snow tick is about snow
-		// propogation and a snowmelt node should be first/early.
+		// propogation. it seems that it's really saying that snowmelt at
+		// the head of a stream will run after the stream it's own, since
+		// we're running pre-order.
+
+		var p = new HS.Program('foo snowmelt');
+
+		p.tick();
+		expect(p.findFirstNode('foo').is_snowy).toBe(false);
+		p.tick();
+		expect(p.findFirstNode('foo').is_snowy).toBe(true);
 	});
 });
 

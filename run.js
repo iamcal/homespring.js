@@ -10,6 +10,6 @@ fs.readFile(path, 'utf8', function(err, data){
 		console.log('Unable to read source file: '+err);
 	}else{
 		var p = new HS.Program(data, true);
-		p.run();
+		p.run(50);
 	}
 });

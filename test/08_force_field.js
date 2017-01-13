@@ -94,13 +94,7 @@ describe("keyword: force field", function(){
 
 		var p = new HS.Program('bear force. field powers spring');
 
-		// we tick twice, because water is updated before power.
-		// this means we let the water through before powering up
-		// the force field. we use 'bear' instead of a spring,
-		// since springs always produce water!
-
 		p.tick();
-		expect(p.findFirstNode('bear').is_watered).toBe(true);
 		p.tick();
 		expect(p.findFirstNode('bear').is_watered).toBe(false);
 	});
@@ -110,7 +104,6 @@ describe("keyword: force field", function(){
 		var p = new HS.Program('bear force. field spring');
 
 		p.tick();
-		expect(p.findFirstNode('bear').is_watered).toBe(true);
 		p.tick();
 		expect(p.findFirstNode('bear').is_watered).toBe(true);
 	});

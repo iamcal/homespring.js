@@ -6,6 +6,7 @@ HS.Program.prototype.findFirstNode = function(name){
 	for (var i=0; i<this.nodes.length; i++){
 
 		if (this.nodes[i].lname == name) return this.nodes[i];
+		if (this.nodes[i].old_lname == name) return this.nodes[i];
 	}
 
 	return null;

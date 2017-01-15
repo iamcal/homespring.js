@@ -30,7 +30,7 @@ describe("keyword: hydro power", function(){
 		p.tick();
 		p.tick();
 
-		expect(p.findFirstNode('hydro power')).toBe(null);
+		expect(p.findFirstNode('hydro power').is_destroyed).toBe(true);
 	});
 });
 

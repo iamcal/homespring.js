@@ -15,7 +15,7 @@ The table below sahows which interpreters are able to run which examples:
 | hi.hs        | Joe      | yes | ?   | yes  |
 | name.hs      | Joe      | yes | ?   | yes  |
 | null.hs      | Joe      | -   | ?   | yes  |
-| quiz.hs      | Joe      | -   | ?   | yes  |
+| quiz.hs      | Joe      | yes | ?   | yes  |
 | reverse-1.hs | Quin?    | -   | ?   | -    |
 | reverse-2.hs | Quin?    | -   | ?   | -    |
 | reverse-3.hs | Quin?    | -   | ?   | -    |

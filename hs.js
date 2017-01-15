@@ -64,10 +64,13 @@ fs.readFile(path, 'utf8', function(err, data){
 			//	}
 			}else{
 				console.log("INPUT: "+command.toString());
+				p.input = command.toString();
+				console.log('set p.input at tick '+p.tickNum);
 			}
 		});
 
 		p.onTerminate = function(){
+			console.log('p.onTerminate() called at tick '+p.tickNum);
 			stdin.destroy();
 		};
 

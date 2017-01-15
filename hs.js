@@ -58,14 +58,15 @@ fs.readFile(path, 'utf8', function(err, data){
 
 		stdin.on('data', function(command){
 			var input = command.toString();
-			if (input.length == 1){
+			input = input.substr(0, input.length-1);
+
+			if (input.length == 0){
 			//	if (h.debug){
 			//		setTimeout(h.step.bind(h), 0);
 			//	}
 			}else{
-				console.log("INPUT: "+command.toString());
-				p.input = command.toString();
-				console.log('set p.input at tick '+p.tickNum);
+				p.input = input;
+				//console.log('set p.input at tick '+p.tickNum);
 			}
 		});
 
@@ -74,7 +75,7 @@ fs.readFile(path, 'utf8', function(err, data){
 		};
 
 		p.onTerminate = function(){
-			console.log('p.onTerminate() called at tick '+p.tickNum);
+			//console.log('p.onTerminate() called at tick '+p.tickNum);
 			stdin.destroy();
 		};
 

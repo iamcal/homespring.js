@@ -12,8 +12,8 @@ The table below sahows which interpreters are able to run which examples:
 | hello-1.hs   | Joe      | yes | ?   | yes  |
 | hello-2.hs   | Joe      | yes | ?   | yes  |
 | hello-3.hs   | Joe      | yes | ?   | yes  |
-| hi.hs        | Joe      | -   | ?   | yes  |
-| name.hs      | Joe      | -   | ?   | yes  |
+| hi.hs        | Joe      | yes | ?   | yes  |
+| name.hs      | Joe      | yes | ?   | yes  |
 | null.hs      | Joe      | -   | ?   | yes  |
 | quiz.hs      | Joe      | -   | ?   | yes  |
 | reverse-1.hs | Quin?    | -   | ?   | -    |

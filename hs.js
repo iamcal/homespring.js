@@ -69,6 +69,10 @@ fs.readFile(path, 'utf8', function(err, data){
 			}
 		});
 
+		p.onOutput = function(str){
+			process.stdout.write(str);
+		};
+
 		p.onTerminate = function(){
 			console.log('p.onTerminate() called at tick '+p.tickNum);
 			stdin.destroy();

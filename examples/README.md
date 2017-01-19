@@ -1,7 +1,7 @@
 # Example code
 
 These examples in this directory are taken from multiple sources.
-The table below sahows which interpreters are able to run which examples:
+The table below shows which interpreters are able to run which examples:
 
 | Example      | Source       | Cal | Jeff | Joe | Quin |
 | ------------ | ------------ | --- | ---- | --- | ---- |

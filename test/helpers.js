@@ -73,7 +73,6 @@ function test_example(filename){
 			p.tick();
 			if (p.terminated) break;
 		}
-		if (p.onTestEnd) p.onTestEnd();
 	}
 
 	return p;

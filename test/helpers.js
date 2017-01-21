@@ -1,4 +1,3 @@
-
 // helpers for writing tests
 
 HS.Program.prototype.findFirstNode = function(name){
@@ -45,3 +44,37 @@ HS.Salmon.prototype.findNode = function(){
 
 	return null;
 };
+
+function test_example(filename, maxTicks){
+
+	var code = '';
+	$.ajax({
+		async: false, // must be synchronous to guarantee that no tests are run before fixture is loaded
+		cache: false,
+		url: 'base/examples/'+filename,
+		//dataType: 'html',
+		success: function (data, status, $xhr){
+			code = $xhr.responseText
+		}
+	}).fail(function ($xhr, status, err){
+		throw new Error('Fixture could not be loaded: ' + url + ' (status: ' + status + ', message: ' + err.message + ')')
+	});
+
+	var p = new HS.Program(code);
+
+	p.output = [];
+
+	p.onOutput = function(str){
+		p.output.push(str);
+	};
+
+	p.test = function(){
+		for (var i=0; i<maxTicks; i++){
+			p.tick();
+			if (p.terminated) break;
+		}
+	}
+
+	return p;
+}
+

@@ -3,9 +3,15 @@ module.exports = function(config) {
     basePath: '',
     frameworks: ['jasmine'],
     files: [
+      'node_modules/jquery/dist/jquery.js',
       'lib/homespring.min.js',
       'test/helpers.js',
-      'test/*.js'
+      'test/*.js',
+      {
+        pattern: 'examples/*.hs',
+        included: false,
+        served: true
+      }
     ],
     exclude: [
     ],

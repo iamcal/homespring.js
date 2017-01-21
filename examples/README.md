@@ -22,15 +22,15 @@ The table below shows which interpreters are able to run which examples:
 | hello-1.hs    | Jeff Binder           | yes | ?    | yes | yes  |
 | hello-2.hs    | Jeff Binder           | yes | ?    | yes | yes  |
 | hello-3.hs    | Jeff Binder           | yes | ?    | yes | yes  |
-| hello-4.hs    | Benito van der Zander | ?   | ?    | ?   | ?    |
+| hello-4.hs    | Benito van der Zander | yes   | ?    | ?   | ?    |
 | hi.hs         | Jeff Binder           | yes | ?    | yes | yes  |
 | name.hs       | Jeff Binder           | yes | ?    | yes | yes  |
 | null.hs       | Jeff Binder           | yes | ?    | yes | yes  |
-| quiz.hs       | Jeff Binder           | yes | ?    | yes | yes  |
+| quiz.hs       | Jeff Binder           | UNTESTED | ?    | yes | yes  |
 | reverse-1.hs  | Quin Kennedy          | -   | ?    | -   | -    |
 | reverse-2.hs  | Quin Kennedy          | -   | ?    | -   | -    |
 | reverse-3.hs  | Quin Kennedy          | -   | ?    | -   | -    |
-| simple.hs     | Jeff Binder           | yes | ?    | yes | yes  |
+| simple.hs     | Jeff Binder           | UNTESTED | ?    | yes | yes  |
 | split.hs      | Quin Kennedy          | -   | ?    | ?   | -    |
 | tic.hs        | Joe Neeman            | -   | ?    | yes | -    |
 

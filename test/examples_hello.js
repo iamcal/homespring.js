@@ -1,8 +1,8 @@
-describe("examples: hello*", function(){
+describe("examples: hello-*.hs", function(){
 
 	it("runs hello-1.hs", function(){
 
-		var p = test_example('hello-1.hs', 10);
+		var p = test_example('hello-1.hs');
 
 		p.onTerminate = function(){
 
@@ -10,12 +10,17 @@ describe("examples: hello*", function(){
 			expect(p.output).toEqual(['Hello World!\n']);
 		};
 
-		p.test();
+		p.onTestEnd = function(){
+
+			expect(p.terminated).toBe(true);
+		};
+
+		p.test(10);
 	});
 
 	it("runs hello-2.hs", function(){
 
-		var p = test_example('hello-2.hs', 20);
+		var p = test_example('hello-2.hs');
 
 		p.onTerminate = function(){
 
@@ -23,12 +28,17 @@ describe("examples: hello*", function(){
 			expect(p.output).toEqual(['Hello World!\n']);
 		};
 
-		p.test();
+		p.onTestEnd = function(){
+
+			expect(p.terminated).toBe(true);
+		};
+
+		p.test(20);
 	});
 
 	it("runs hello-3.hs", function(){
 
-		var p = test_example('hello-3.hs', 20);
+		var p = test_example('hello-3.hs');
 
 		p.onTerminate = function(){
 
@@ -36,12 +46,17 @@ describe("examples: hello*", function(){
 			expect(p.output).toEqual(['Hello, World!\n']);
 		};
 
-		p.test();
+		p.onTestEnd = function(){
+
+			expect(p.terminated).toBe(true);
+		};
+
+		p.test(20);
 	});
 
 	it("runs hello-4.hs", function(){
 
-		var p = test_example('hello-4.hs', 10);
+		var p = test_example('hello-4.hs');
 
 		p.onTerminate = function(){
 
@@ -49,7 +64,12 @@ describe("examples: hello*", function(){
 			expect(p.output).toEqual(['hell', 'o ', 'world\n']);
 		};
 
-		p.test();
+		p.onTestEnd = function(){
+
+			expect(p.terminated).toBe(true);
+		};
+
+		p.test(10);
 	});
 
 });

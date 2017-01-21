@@ -45,7 +45,7 @@ HS.Salmon.prototype.findNode = function(){
 	return null;
 };
 
-function test_example(filename, maxTicks){
+function test_example(filename){
 
 	var code = '';
 	$.ajax({
@@ -68,11 +68,12 @@ function test_example(filename, maxTicks){
 		p.output.push(str);
 	};
 
-	p.test = function(){
+	p.test = function(maxTicks){
 		for (var i=0; i<maxTicks; i++){
 			p.tick();
 			if (p.terminated) break;
 		}
+		if (p.onTestEnd) p.onTestEnd();
 	}
 
 	return p;

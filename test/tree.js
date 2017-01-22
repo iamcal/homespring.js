@@ -16,19 +16,28 @@ describe("tree builder", function(){
 		expect(p.findFirstNode('c').dumpChildren()).toBe('');
 	});
 
-	it("throws when the tree backtracks too far", function(){
+	it("throws when the tree backtracks too far in strict mode", function(){
 
 		expect(function(){
 
-			var p = new HS.Program('a  b');
+			var p = new HS.Program('a  b', false, true);
 
 		}).toThrow();
 
 		expect(function(){
 
-			var p = new HS.Program('a b   c');
+			var p = new HS.Program('a b   c', false, true);
 
 		}).toThrow();
+	});
+
+	it("inserts a blank child when the tree backtracks too far in non-strict mode", function(){
+
+		// creates a tree "a" -> "" -> "b"
+
+		var p = new HS.Program('a  b');
+		expect(p.findFirstNode('a').dumpChildren()).toBe('');
+		expect(p.findFirstNode('').dumpChildren()).toBe('b');
 	});
 
 });

@@ -30,3 +30,14 @@ The code (unsurprisingly) outputs `Hello World!\n`, as is appropriate.
 * Quin Kennedy's NodeJS version: https://github.com/quinkennedy/Homespring
 * Alternative syntax processor: https://github.com/benibela/home-river
 * My (partial) Perl implementation: http://search.cpan.org/dist/Language-Homespring/Homespring.pm
+
+
+## Differences from spec
+
+The updated spec (http://xeny.net/Homespring) contains some mistakes or omissions.
+To allow this interpreter to correctly run example code, several changes and clatifications needed to be made:
+
+* `reverse_down` changes salmon direction to upstream
+* `split` adds the new fish to the bottom of the list, so `['ab', 'cd']` becomes `['a','b','c','d']`
+* spring nodes don't produce water until the end of the water tick
+* the snow tick is propogated pre-order, not post-order

@@ -26,7 +26,7 @@ The table below shows which interpreters are able to run which examples:
 | hi.hs         | Jeff Binder           | yes | ?    | yes | yes  |
 | name.hs       | Jeff Binder           | yes | ?    | yes | yes  |
 | null.hs       | Jeff Binder           | yes | ?    | yes | yes  |
-| quiz.hs       | Jeff Binder           | UNTESTED | ?    | yes | yes  |
+| quiz.hs       | Jeff Binder           | yes | ?    | yes | yes  |
 | reverse-1.hs  | Quin Kennedy          | -   | ?    | -   | -    |
 | reverse-2.hs  | Quin Kennedy          | -   | ?    | -   | -    |
 | reverse-3.hs  | Quin Kennedy          | -   | ?    | -   | -    |

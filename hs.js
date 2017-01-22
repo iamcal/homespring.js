@@ -11,6 +11,7 @@ var HS = require('./lib/homespring.js');
 		'trace' : false,
 		'pause' : false, // pause between steps
 		'limit'	: undefined,
+		'nodes' : false,
 	};
 
 	//look at all but the last flag. the last one is the file name to open
@@ -30,6 +31,10 @@ var HS = require('./lib/homespring.js');
 				break;
 			case "-l":
 				options.limit = process.argv[++i];
+				break;
+			case "-n":
+			case "--nodes":
+				options.nodes = true;
 				break;
 			default:
 				console.log("unknown flag: " + process.argv[i]);
@@ -52,6 +57,13 @@ fs.readFile(path, 'utf8', function(err, data){
 	}else{
 		var p = new HS.Program(data, options.trace);
 		if (options.debug) p.dumpState();
+
+		if (options.nodes){
+			var n = [];
+			for (var i in p.nodesUsed) n.push(i);
+			n = n.sort();
+			console.log("Nodes used:", n);
+		}
 
 		var stdin = process.openStdin();
 		stdin.setEncoding('utf8');
@@ -85,8 +97,8 @@ fs.readFile(path, 'utf8', function(err, data){
 			p.dumpState();
 
 			while (!p.terminated){
-				p.tick();
-				p.dumpState();
+			//	p.tick();
+			//	p.dumpState();
 			}
 		}else{
 			p.run(options.limit);

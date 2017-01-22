@@ -13,7 +13,7 @@ The table below shows which interpreters are able to run which examples:
 | count-3.hs    | Benito van der Zander | ?   | ?    | ?   | ?    |
 | count-4.hs    | Benito van der Zander | _almost_   | ?    | ?   | ?    |
 | count-5.hs    | Benito van der Zander | yes | ?    | ?   | ?    |
-| count-6.hs    | Benito van der Zander | ?   | ?    | ?   | ?    |
+| count-6.hs    | Benito van der Zander | yes | ?    | ?   | ?    |
 | first.hs      | Jeff Binder           | yes | ?    | yes | yes  |
 | fizzbuzz-1.hs | Benito van der Zander | ?   | ?    | ?   | ?    |
 | fizzbuzz-2.hs | Benito van der Zander | ?   | ?    | ?   | ?    |

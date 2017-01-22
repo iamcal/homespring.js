@@ -25,4 +25,15 @@ describe("examples: count-*.hs", function(){
 		expect(p.output.join('')).toEqual(count_out);
 	});
 
+	it("runs count-6.hs", function(){
+
+		var p = test_example('count-6.hs');
+
+		p.test(100);
+
+		expect(p.terminated).toBe(true);
+		expect(p.tickNum).toBe(51);
+		expect(p.output.join('')).toEqual(count_out);
+	});
+
 });

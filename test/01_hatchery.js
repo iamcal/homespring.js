@@ -13,7 +13,7 @@ describe("keyword: hatchery", function(){
 		expect(node.salmon.length).toBe(0);
 	});
 
-	it("creates a mature, upstream salmon named \"homeless\" when powered", function(){
+	it("creates a young, upstream salmon named \"homeless\" when powered", function(){
 
 		var p = new HS.Program('hatchery powers');
                 p.tick();
@@ -24,7 +24,7 @@ describe("keyword: hatchery", function(){
 
 		var salmon = node.salmon[0];
 		expect(salmon.name).toBe("homeless");
-		expect(salmon.age).toBe(HS.const.MATURE);
+		expect(salmon.age).toBe(HS.const.YOUNG);
 		expect(salmon.direction).toBe(HS.const.UPSTREAM);
 	});
 

@@ -105,6 +105,7 @@ describe("keyword: force field", function(){
 
 		p.tick();
 		p.tick();
+		p.tick();
 		expect(p.findFirstNode('bear').is_watered).toBe(true);
 	});
 

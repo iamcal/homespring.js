@@ -18,6 +18,7 @@ describe("keyword: hydro power", function(){
 		var p = new HS.Program('hydro. power insulated foo');
 		p.tick();
 		p.tick();
+		p.tick();
 
 		expect(p.findFirstNode('hydro power').is_watered).toBe(true);
 		expect(p.findFirstNode('hydro power').isPowered()).toBe(true);

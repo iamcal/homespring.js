@@ -46,3 +46,4 @@ To allow this interpreter to correctly run example code, several changes and cla
 * a token can't start with a period
 * a blank token that would traverse tree-building beyond the root node adds a blank token as a child of the root node instead
 * salmon created in the `hatchery` are young, not mature
+* the `hatchery` node can be destroyed

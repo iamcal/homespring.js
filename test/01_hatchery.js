@@ -44,5 +44,16 @@ describe("keyword: hatchery", function(){
 
 		expect(p.findFirstNode('hatchery').salmon.length).toBe(1);
 	});
+
+	it("does nothing once destroyed", function(){
+
+		var p = new HS.Program('hatchery snowmelt powers');
+
+		p.tick();
+		p.tick();
+
+		expect(p.findFirstNode('hatchery').salmon.length).toBe(0);
+		expect(p.findFirstNode('snowmelt').salmon.length).toBe(1);
+	});
 });
 

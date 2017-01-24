@@ -39,10 +39,17 @@ describe("keyword: hatchery", function(){
 		p.fishTickUp();
 
 		expect(p.findFirstNode('hatchery').salmon.length).toBe(0);
+		expect(p.findFirstNode('hatchery').born.length).toBe(0);
 
 		p.fishTickHatch();
 
+		expect(p.findFirstNode('hatchery').salmon.length).toBe(0);
+		expect(p.findFirstNode('hatchery').born.length).toBe(1);
+
+		p.fishTickEnd();
+
 		expect(p.findFirstNode('hatchery').salmon.length).toBe(1);
+		expect(p.findFirstNode('hatchery').born.length).toBe(0);
 	});
 
 	it("does nothing once destroyed", function(){

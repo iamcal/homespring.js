@@ -6,7 +6,7 @@ The table below shows which interpreters are able to run which examples:
 | Example       | Source                | Cal | Jeff | Joe | Quin |
 | ------------- | --------------------- | --- | ---- | --- | ---- |
 | add.hs        | Jeff Binder           | -   | ?    | yes | -    |
-| cat.hs        | Jeff Binder           | -   | ?    | yes | yes  |
+| cat.hs        | Jeff Binder           | yes | ?    | yes | yes  |
 | clock.hs      | Benito van der Zander | yes | ?    | ?   | ?    |
 | count-1.hs    | Benito van der Zander | yes | ?    | ?   | ?    |
 | count-2.hs    | Benito van der Zander | ?   | ?    | ?   | ?    |

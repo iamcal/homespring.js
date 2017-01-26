@@ -82,8 +82,14 @@ function test_example_full(filename, config){
 
 	var p = test_example(filename);
 
+	p.onTickStart = function(){
+		if (config.input && typeof config.input[p.tickNum] != 'undefined'){
+			p.input = config.input[p.tickNum];
+		}
+	}
+
 	p.onTickEnd = function(){
-		if (typeof config.output[p.tickNum] != 'undefined'){
+		if (config.output && typeof config.output[p.tickNum] != 'undefined'){
 			expect(p.output).toEqual(config.output[p.tickNum]);
 		}
 	}
@@ -92,7 +98,11 @@ function test_example_full(filename, config){
 		p.test(config.terminates+1);
 		expect(p.terminated).toBe(true);
 		expect(p.tickNum).toBe(config.terminates);
+	}else if (config.run){
+		p.test(config.run);
+		expect(p.terminated).toBe(false);
+		expect(p.tickNum).toBe(config.run);
 	}else{
-		expect(true).toBe(false);
+		expect('').toBe('define config.terminates or config.run!');
 	}
 }

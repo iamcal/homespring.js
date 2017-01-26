@@ -30,7 +30,7 @@ The table below shows which interpreters are able to run which examples:
 | reverse-1.hs  | Quin Kennedy          | -   | ?    | -   | -    |
 | reverse-2.hs  | Quin Kennedy          | -   | ?    | -   | -    |
 | reverse-3.hs  | Quin Kennedy          | -   | ?    | -   | -    |
-| simple.hs     | Jeff Binder           | UNTESTED | ?    | yes | yes  |
+| simple.hs     | Jeff Binder           | yes | ?    | yes | yes  |
 | split.hs      | Quin Kennedy          | -   | ?    | ?   | -    |
 | tic.hs        | Joe Neeman            | -   | ?    | yes | -    |
 

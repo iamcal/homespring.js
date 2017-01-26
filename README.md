@@ -39,7 +39,6 @@ To allow this interpreter to correctly run example code, several changes and cla
 
 * `reverse_down` changes salmon direction to upstream
 * `split` adds the new fish to the bottom of the list, so `['ab', 'cd']` becomes `['a','b','c','d']`
-* spring nodes don't produce water until the end of the water tick
 * the snow tick is propogated pre-order, not post-order
 * the water tick is propogated pre-order, not post-order
 * a double-period creates a blank token without consuming the second period

@@ -78,3 +78,21 @@ function test_example(filename){
 	return p;
 }
 
+function test_example_full(filename, config){
+
+	var p = test_example(filename);
+
+	p.onTickEnd = function(){
+		if (typeof config.output[p.tickNum] != 'undefined'){
+			expect(p.output).toEqual(config.output[p.tickNum]);
+		}
+	}
+
+	if (config.terminates){
+		p.test(config.terminates+1);
+		expect(p.terminated).toBe(true);
+		expect(p.tickNum).toBe(config.terminates);
+	}else{
+		expect(true).toBe(false);
+	}
+}

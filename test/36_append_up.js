@@ -49,7 +49,7 @@ describe("keyword: append_up", function(){
 		expect(s2.dead).toBe(true);
 	});
 
-	it("test program", function(){
+	it("test program one - single append", function(){
 
 		var code = "universe hatchery powers append. up child1  bear hatchery powers child2     marshy marshy marshy marshy marshy snowmelt";
 
@@ -62,6 +62,24 @@ describe("keyword: append_up", function(){
 				13 : ['child1', 'homeless', 'child1', 'homeless', 'child1', 'homeless', 'child1', 'homeless'],
 				14 : ['child1', 'homeless', 'child1', 'homeless', 'child1', 'homeless', 'child1', 'homeless', 'child1', 'homeless'],
 				15 : ['child1', 'homeless', 'child1', 'homeless', 'child1', 'homeless', 'child1', 'homeless', 'child1', 'homeless', 'child1', 'homelesschild2'],
+			},
+			'terminates' : 15,
+		});		
+	});
+
+	it("test program one - multi append", function(){
+
+		var code = "universe hatchery powers append. up child1  bear hatchery powers child2    hatchery powers child3     marshy marshy marshy marshy marshy snowmelt";
+
+		test_code_full(code, {
+			'output' : {
+				9 : [],
+				10 : ['child1', 'homeless'],
+				11 : ['child1', 'homeless', 'child1', 'homeless'],
+				12 : ['child1', 'homeless', 'child1', 'homeless', 'child1', 'homeless'],
+				13 : ['child1', 'homeless', 'child1', 'homeless', 'child1', 'homeless', 'child1', 'homeless'],
+				14 : ['child1', 'homeless', 'child1', 'homeless', 'child1', 'homeless', 'child1', 'homeless', 'child1', 'homeless'],
+				15 : ['child1', 'homeless', 'child1', 'homeless', 'child1', 'homeless', 'child1', 'homeless', 'child1', 'homeless', 'child1', 'homelesschild2child3'],
 			},
 			'terminates' : 15,
 		});		

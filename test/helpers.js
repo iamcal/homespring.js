@@ -45,7 +45,7 @@ HS.Salmon.prototype.findNode = function(){
 	return null;
 };
 
-function test_example(filename){
+function test_load_file(filename){
 
 	var code = '';
 	$.ajax({
@@ -60,7 +60,17 @@ function test_example(filename){
 		throw new Error('Fixture could not be loaded: ' + url + ' (status: ' + status + ', message: ' + err.message + ')')
 	});
 
-	var p = new HS.Program(code);
+	return code;
+}
+
+function test_example(filename){
+
+	return test_code(test_load_file(filename));
+}
+
+function test_code(source){
+
+	var p = new HS.Program(source);
 
 	p.output = [];
 
@@ -80,7 +90,12 @@ function test_example(filename){
 
 function test_example_full(filename, config){
 
-	var p = test_example(filename);
+	return  test_code_full(test_load_file(filename), config);
+}
+
+function test_code_full(source, config){
+
+	var p = test_code(source);
 
 	p.onTickStart = function(){
 		if (config.input && typeof config.input[p.tickNum] != 'undefined'){

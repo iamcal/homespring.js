@@ -18,7 +18,7 @@ The table below shows which interpreters are able to run which examples:
 | fizzbuzz-1.hs | Benito van der Zander | _almost_ | ?    | ?   | ?    |
 | fizzbuzz-2.hs | Benito van der Zander | _almost_ | ?    | ?   | ?    |
 | fizzbuzz-3.hs | Benito van der Zander | yes | ?    | ?   | ?    |
-| flipflop.hs   | Joe Neeman            | -   | ?    | yes | -    |
+| flipflop.hs   | Joe Neeman            | yes | ?    | yes | -    |
 | hello-1.hs    | Jeff Binder           | yes | ?    | yes | yes  |
 | hello-2.hs    | Jeff Binder           | yes | ?    | yes | yes  |
 | hello-3.hs    | Jeff Binder           | yes | ?    | yes | yes  |

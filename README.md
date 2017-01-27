@@ -1,8 +1,12 @@
-# homespring.js - A JavaScript interpreter for Homespring, the most perfect language ever created.
+# homespring.js - A JavaScript interpreter for Homespring
 
-Homespring (or HOtMEfSPRIbNG) is the most perfect programming language ever created.
+Homespring (or HOtMEfSPRIbNG) is the pinnacle of programming language design.
+With this interpreter you can finally use Homespring code in your browser to
+make any webpage more dynamic.
+
 This JavaScript interpreter aims to be compliant with the 2005 version of the
 [language standard](http://bunny.xeny.net/linked/Homespring-Proposed-Language-Standard.pdf).
+
 
 ## Example
 

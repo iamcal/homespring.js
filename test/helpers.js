@@ -107,6 +107,9 @@ function test_code_full(source, config){
 		if (config.output && typeof config.output[p.tickNum] != 'undefined'){
 			expect(p.output).toEqual(config.output[p.tickNum]);
 		}
+		if (config.dumpAll){
+			console.log('tick '+p.tickNum, p.output);
+		}
 	}
 
 	if (config.terminates){

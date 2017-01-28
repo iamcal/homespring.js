@@ -55,7 +55,7 @@ describe("keyword: reverse_down", function(){
 		expect(p.findFirstNode('reverse down').containsSalmon(s)).toBe(true);
 	});
 
-	it("test program", function(){
+	it("test program - allows reverse", function(){
 
 		var code = "universe reverse. down hatchery powers one    two  marshy marshy marshy marshy snowmelt";
 
@@ -65,6 +65,23 @@ describe("keyword: reverse_down", function(){
 				11 : ['two', 'two', 'one', 'homeless'],
 			},
 			'terminates' : 11,
+		});
+
+	});
+
+	it("test program - blocks reverse", function(){
+
+		var code = "universe reverse. down youth. fountain hatchery powers one     current two   marshy marshy marshy marshy marshy snowmelt";
+
+		test_code_full(code, {
+			'output' : {
+				9 : [],
+				10 : ['homeless', 'one'],
+				11 : ['homeless', 'one', 'homeless', 'one'],
+				12 : ['homeless', 'one', 'homeless', 'one', 'homeless', 'one'],
+				13 : ['homeless', 'one', 'homeless', 'one', 'homeless', 'one', 'homeless', 'one'],
+			},
+			'terminates' : 13,
 		});
 
 	});

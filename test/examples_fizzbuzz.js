@@ -1,5 +1,30 @@
 describe("examples: fizzbuzz-*.hs", function(){
 
+	var solution_100 = '';
+	for (var i=1; i<=100; i++){
+		var f = i % 3 == 0, b = i % 5 == 0;
+		solution_100 += f ? b ? "FizzBuzz\n" : "Fizz\n" : b ? "Buzz\n" : i + "\n";
+	}
+
+	it("runs fizzbuzz-1.hs", function(){
+
+		test_example_full('fizzbuzz-1.hs', {
+			'terminates' : 2207,
+			'output' : {
+				2207 : solution_100,
+			}
+		});
+	});
+
+	it("runs fizzbuzz-2.hs", function(){
+
+		test_example_full('fizzbuzz-2.hs', {
+			'terminates' : 2207,
+			'output' : {
+				2207 : solution_100,
+			}
+		});
+	});
 
 	it("runs fizzbuzz-3.hs", function(){
 

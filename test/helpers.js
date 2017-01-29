@@ -105,7 +105,11 @@ function test_code_full(source, config){
 
 	p.onTickEnd = function(){
 		if (config.output && typeof config.output[p.tickNum] != 'undefined'){
-			expect(p.output).toEqual(config.output[p.tickNum]);
+			if (Array.isArray(config.output[p.tickNum])){
+				expect(p.output).toEqual(config.output[p.tickNum]);
+			}else{
+				expect(p.output.join('')).toBe(config.output[p.tickNum]);
+			}
 		}
 		if (config.dumpAll){
 			console.log('tick '+p.tickNum, p.output);

@@ -26,6 +26,7 @@ module.exports = function(config) {
       'karma-jasmine',
       'karma-phantomjs-launcher',
       'karma-story-reporter',
-    ]
+    ],
+    browserNoActivityTimeout: 60000
   })
 }

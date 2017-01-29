@@ -90,7 +90,7 @@ function test_code(source){
 
 function test_example_full(filename, config){
 
-	return  test_code_full(test_load_file(filename), config);
+	return test_code_full(test_load_file(filename), config);
 }
 
 function test_code_full(source, config){
@@ -127,4 +127,6 @@ function test_code_full(source, config){
 	}else{
 		expect('').toBe('define config.terminates or config.run!');
 	}
+
+	return p;
 }

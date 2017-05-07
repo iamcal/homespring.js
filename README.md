@@ -17,12 +17,18 @@ Homespring programs are as beautiful as they are effective:
 
 We can use the interpreter to model the program:
 
+    var HS = require('./lib/homespring.js');
     var src = 'Universe bear hatchery Hello. World!.\n Powers   marshy marshy snowmelt';
     var program = new HS.Program(src);
-    var output = program.run();
+    var output = program.runSync();
     console.log(output);
 
 The code (unsurprisingly) outputs `Hello World!\n`, as is appropriate.
+
+
+## Documentation
+
+The interpreter has quite a few options...
 
 
 ## Other links

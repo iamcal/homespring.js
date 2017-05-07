@@ -52,8 +52,8 @@ There are three ways to execute the program.
 method will return when the program terminates, or when `max_ticks` have been reached. In the case of
 a non-terminating program, this method will not return unless `max_ticks` was specified. This method
 also returns the output as a single string, although the output callback (see below) can also be used.
-Any input must be immediaetly available to the input callback (see below), so is not suitable for an
-interactive process.
+Any input must be immediaetly available in the input property (see below), so is not suitable for an 
+interactive process or one that needs multiple inputs.
 
 `run()` is similar to `runSync()`, but each tick of execution happens using `setTimeout()`. Because of
 this, the method will return immediately. You will need to hook up a termination callback (see below)
@@ -66,11 +66,42 @@ be detected eitehr via a callback or checking the `.terminated` property.
 
 ### Callbacks
 
+You can hook up to several optional callbacks to capture certain events during execution:
+
+    program.onOutput = function(str, fish){};
+    program.onTerminate = function(){};
+    program.onTickStart = function(){};
+    program.onTickEnd = function(){};
+
+The output callback is stored whenever the program produces output. The first argument is
+the string to ouput, while the second is the fish that created the output.
+
+The terminate callback is called when the program exits, either by reaching the end of
+execution (when `universe` is destroyed, etc) or by hitting `max_ticks` number of ticks.
+
+The tick start and end callbacks are called as each execution step starts and ends.
 
 
+### Properties
+
+    program.input
+    program.terminated
+    program.tickNum
+
+The `input` property is used to supply input to the program. See `bin/hs.js` for an
+example of how to hook this up to an interactive process.
+
+The `terminated` property is set to true when the program eaches the end of execution
+or reaches `max_ticks` number of ticks.
+
+The `tickNum` property identifies the last tick to start. This is set to zero when
+a program is created, and increment just before `onTickStart()` is called.
 
 
-The interpreter has quite a few options...
+### Nodes and Salmon
+
+TODO...
+
 
 
 ## Other links

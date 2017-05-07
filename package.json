@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "A JS Homespring interpreter",
   "main": "lib/homespring.js",
-  "directories": {
-    "test": "test"
-  },
   "devDependencies": {
     "grunt": "~1.0.1",
     "grunt-contrib-uglify": "~1.0.1",

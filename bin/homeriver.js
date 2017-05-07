@@ -1,10 +1,14 @@
 #!/usr/bin/node
 
-
 var fs = require('fs');
 
 var path_in = process.argv[2];
 var path_out = process.argv[3];
+
+if (!path_in || !path_out){
+	console.log("Usage: ./homeriver.js input-file output-file");
+	process.exit();
+}
 
 fs.readFile(path_in, 'utf8', function(err, data){
 	if (err){

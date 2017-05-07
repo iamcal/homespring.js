@@ -132,4 +132,4 @@ To allow this interpreter to correctly run example code, several changes and cla
 * the `young bear` starts eating at the second salmon, not the first
 * in the fish up tick, if an upstream salmon name matches the node name, it spawns immediately. this happens only once the salmon
   is ready to leave, so on the second tick after entering a `shallows` or `rapids` node.
-* when a node is destroyed ny snowmelt, it keeps its name (rather than having the name set to "")
+* when a node is destroyed by snowmelt, it keeps its name (rather than having the name set to "")

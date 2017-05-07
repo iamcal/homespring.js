@@ -7,11 +7,11 @@ var HS = require('./lib/homespring.js');
 // parse arguments
 
 	var options = {
-		'debug'	: false,
-		'trace' : false,
-		'pause' : false, // pause between steps
-		'limit'	: undefined,
-		'nodes' : false,
+		'debug'	: false,	// output state after each tick
+		'trace' : false,	// show debug output as we run
+		'pause' : false,	// pause between each tick, until enter is pressed
+		'limit'	: undefined,	// limit max execution ticks
+		'nodes' : false,	// dump the special nodes used in this program
 	};
 
 	//look at all but the last flag. the last one is the file name to open
@@ -60,7 +60,6 @@ fs.readFile(path, 'utf8', function(err, data){
 		console.log('Unable to read source file: '+err);
 	}else{
 		var p = new HS.Program(data, {
-			'singleTick' : options.debug,
 			'strictmode' : false,
 			'traceTicks' : options.trace,
 		});
@@ -83,7 +82,6 @@ fs.readFile(path, 'utf8', function(err, data){
 			if (input.length == 0){
 				if (options.pause){
 					p.tick();
-					p.dumpState();
 				}
 			}else{
 				p.input = input;
@@ -100,11 +98,16 @@ fs.readFile(path, 'utf8', function(err, data){
 			stdin.destroy();
 		};
 
+		if (options.debug){
+			p.onTickEnd = function(){
+				p.dumpState();
+			};
+		}
+
 		if (options.pause){
 
 			p.maxTicks = options.limit;
 			p.tick();
-			p.dumpState();
 		}else{
 			p.run(options.limit);
 		}

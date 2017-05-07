@@ -32,13 +32,39 @@ The code (unsurprisingly) outputs `Hello World!\n`, as is appropriate.
 
     var program = new HS.Program(source[, options]);
 
-The source of the program must be passed when creating a neww program object. The source
-is tokenized at the river-system built at this time. The optional `options` argument
-should contain a hash of possible options:
+The source of the program must be passed when creating a new program object. The source
+is tokenized at the river-system built at this time. Exceptions are thrown for invalid
+source. The optional `options` argument should contain a hash of possible options:
 
-  * `singleTick` (bool) : controls whether `run()` should execute only a single tick (default: false).
   * `strictMode` (bool) : controls whether programs can traverse beyond their root (default: false).
   * `traceTicks` (cool) : controls whether certain debug output is shown, such as start and end of each tick (default: false).
+
+
+### Execution
+
+    program.runSync([max_ticks]);
+    program.run([max_ticks]);
+    program.tick();
+
+There are three ways to execute the program.
+
+`runSync()` will run the program to completion and return. This is done completely synchronously. This
+method will return when the program terminates, or when `max_ticks` have been reached. In the case of
+a non-terminating program, this method will not return unless `max_ticks` was specified. This method
+also returns the output as a single string, although the output callback (see below) can also be used.
+Any input must be immediaetly available to the input callback (see below), so is not suitable for an
+interactive process.
+
+`run()` is similar to `runSync()`, but each tick of execution happens using `setTimeout()`. Because of
+this, the method will return immediately. You will need to hook up a termination callback (see below)
+to watch for program completion. Output is not returned, so the callback must be used.
+
+`tick()` synchronously executes a single tick of the program, then returns. This can be used for
+building an interactive debugger. Callbacks must be used for input and output. Termination can
+be detected eitehr via a callback or checking the `.terminated` property.
+
+
+### Callbacks
 
 
 

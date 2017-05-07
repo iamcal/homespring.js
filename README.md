@@ -26,7 +26,7 @@ We can use the interpreter to model the program:
 The code (unsurprisingly) outputs `Hello World!\n`, as is appropriate.
 
 
-## Documentation
+## JavaScript API
 
 ### Constructor
 

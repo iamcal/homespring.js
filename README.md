@@ -28,6 +28,22 @@ The code (unsurprisingly) outputs `Hello World!\n`, as is appropriate.
 
 ## Documentation
 
+### Constructor
+
+    var program = new HS.Program(source[, options]);
+
+The source of the program must be passed when creating a neww program object. The source
+is tokenized at the river-system built at this time. The optional `options` argument
+should contain a hash of possible options:
+
+  * `singleTick` (bool) : controls whether `run()` should execute only a single tick (default: false).
+  * `strictMode` (bool) : controls whether programs can traverse beyond their root (default: false).
+  * `traceTicks` (cool) : controls whether certain debug output is shown, such as start and end of each tick (default: false).
+
+
+
+
+
 The interpreter has quite a few options...
 
 

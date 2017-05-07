@@ -36,6 +36,10 @@ var HS = require('./lib/homespring.js');
 			case "--nodes":
 				options.nodes = true;
 				break;
+			case "-p":
+			case "--pause":
+				options.pause = true;
+				break;
 			default:
 				console.log("unknown flag: " + process.argv[i]);
 				console.log("use --help to see usage");
@@ -55,7 +59,11 @@ fs.readFile(path, 'utf8', function(err, data){
 	if (err){
 		console.log('Unable to read source file: '+err);
 	}else{
-		var p = new HS.Program(data, options.trace);
+		var p = new HS.Program(data, {
+			'singleTick' : options.debug,
+			'strictmode' : false,
+			'traceTicks' : options.trace,
+		});
 		if (options.debug) p.dumpState();
 
 		if (options.nodes){
@@ -73,9 +81,10 @@ fs.readFile(path, 'utf8', function(err, data){
 			input = input.substr(0, input.length-1);
 
 			if (input.length == 0){
-			//	if (h.debug){
-			//		setTimeout(h.step.bind(h), 0);
-			//	}
+				if (options.pause){
+					p.tick();
+					p.dumpState();
+				}
 			}else{
 				p.input = input;
 				//console.log('set p.input at tick '+p.tickNum);
@@ -91,15 +100,11 @@ fs.readFile(path, 'utf8', function(err, data){
 			stdin.destroy();
 		};
 
-		if (options.debug){
-			p.debugMode = true;
-			p.run(options.limit);
-			p.dumpState();
+		if (options.pause){
 
-			while (!p.terminated){
-			//	p.tick();
-			//	p.dumpState();
-			}
+			p.maxTicks = options.limit;
+			p.tick();
+			p.dumpState();
 		}else{
 			p.run(options.limit);
 		}

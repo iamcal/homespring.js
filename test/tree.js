@@ -20,13 +20,17 @@ describe("tree builder", function(){
 
 		expect(function(){
 
-			var p = new HS.Program('a  b', false, true);
+			var p = new HS.Program('a  b', {
+				'strictMode' : true
+			});
 
 		}).toThrow();
 
 		expect(function(){
 
-			var p = new HS.Program('a b   c', false, true);
+			var p = new HS.Program('a b   c', {
+				'strictMode' : true
+			});
 
 		}).toThrow();
 	});

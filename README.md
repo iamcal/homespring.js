@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/iamcal/homespring.js.svg?branch=master)](https://travis-ci.org/iamcal/homespring.js)
 [![Coverage Status](https://coveralls.io/repos/iamcal/homespring.js/badge.svg)](https://coveralls.io/r/iamcal/homespring.js)
+[![Known Vulnerabilities](https://snyk.io/test/github/iamcal/homespring.js/badge.svg)](https://snyk.io/test/github/iamcal/homespring.js)
 
 Homespring (or HOtMEfSPRIbNG) is the pinnacle of programming language design.
 With this interpreter you can finally use Homespring code in your browser to

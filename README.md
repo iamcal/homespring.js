@@ -28,11 +28,11 @@ The code (unsurprisingly) outputs `Hello World!\n`, as is appropriate.
 
 ## Commandline Usage
 
-This repo includes a node-based CLI wrapper:
+A simple node-based CLI wrapper is included:
 
     ./bin/hs.js examples/hello-1.hs
 
-You can explore more options:
+Several options are available:
 
     ./bin/hs.js --help
 
@@ -45,7 +45,7 @@ You can explore more options:
 
 The source of the program must be passed when creating a new program object. The source
 is tokenized at the river-system built at this time. Exceptions are thrown for invalid
-source. The optional `options` argument should contain a hash of possible options:
+programs. The optional `options` argument must contain a hash of possible options:
 
   * `strictMode` (bool) : controls whether programs can traverse beyond their root (default: false).
   * `traceTicks` (cool) : controls whether certain debug output is shown, such as start and end of each tick (default: false).
@@ -72,7 +72,7 @@ to watch for program completion. Output is not returned, so the callback must be
 
 `tick()` synchronously executes a single tick of the program, then returns. This can be used for
 building an interactive debugger. Callbacks must be used for input and output. Termination can
-be detected eitehr via a callback or checking the `.terminated` property.
+be detected either via a callback or checking the `.terminated` property.
 
 
 ### Callbacks
@@ -84,11 +84,11 @@ You can hook up to several optional callbacks to capture certain events during e
     program.onTickStart = function(){};
     program.onTickEnd = function(){};
 
-The output callback is stored whenever the program produces output. The first argument is
-the string to ouput, while the second is the fish that created the output.
+The output callback is called whenever the program produces output. The first argument is
+the string to be ouput, while the second is the fish that created the output.
 
 The terminate callback is called when the program exits, either by reaching the end of
-execution (when `universe` is destroyed, etc) or by hitting `max_ticks` number of ticks.
+execution (when `universe` is destroyed, etc.) or by hitting `max_ticks` number of ticks.
 
 The tick start and end callbacks are called as each execution step starts and ends.
 

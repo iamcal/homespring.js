@@ -17,7 +17,6 @@ describe("examples: add.hs", function(){
 				93 : b,
 			},
 			'output' : outp,
-			'dumpAll' : true,
 			'terminates' : ticks,
 		});
 

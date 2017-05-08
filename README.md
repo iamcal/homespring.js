@@ -26,6 +26,17 @@ We can use the interpreter to model the program:
 The code (unsurprisingly) outputs `Hello World!\n`, as is appropriate.
 
 
+## Commandline Usage
+
+This repo includes a node-based CLI wrapper:
+
+    ./bin/hs.js examples/hello-1.hs
+
+You can explore more options:
+
+    ./bin/hs.js --help
+
+
 ## JavaScript API
 
 ### Constructor

@@ -1,7 +1,7 @@
 # homespring.js - A JavaScript interpreter for Homespring
 
 [![Build Status](https://travis-ci.org/iamcal/homespring.js.svg?branch=master)](https://travis-ci.org/iamcal/homespring.js)
-[![Coverage Status](https://coveralls.io/repos/iamcal/homespring.js/badge.svg)](https://coveralls.io/r/iamcal/homespring.js)
+[![Coverage Status](https://coveralls.io/repos/github/iamcal/homespring.js/badge.svg?branch=master)](https://coveralls.io/github/iamcal/homespring.js?branch=master)
 [![Known Vulnerabilities](https://snyk.io/test/github/iamcal/homespring.js/badge.svg)](https://snyk.io/test/github/iamcal/homespring.js)
 
 Homespring (or HOtMEfSPRIbNG) is the pinnacle of programming language design.

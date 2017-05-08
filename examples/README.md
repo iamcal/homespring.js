@@ -32,7 +32,7 @@ The table below shows which interpreters are able to run which examples:
 | reverse-3.hs  | Quin Kennedy          | broken? | ?    | ?   | ?    |
 | simple.hs     | Jeff Binder           | yes     | yes  | yes | yes  |
 | split.hs      | Quin Kennedy          | broken? | ?    | ?   | ?    |
-| tic.hs        | Joe Neeman            | -       | -    | yes | -    |
+| tic.hs        | Joe Neeman            | yes     | -    | yes | -    |
 
 
 ## Legend

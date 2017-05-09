@@ -24,7 +24,7 @@ module.exports = function(grunt) {
         configFile: 'karma-cover.conf.js',
         singleRun: true,
         browsers: ['PhantomJS'],
-        logLevel: 'OFF'
+        logLevel: 'ERROR'
       }
     },
     coveralls: {

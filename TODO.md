@@ -11,7 +11,7 @@
 [ ] publish to npm
 
 ## add tests for more nodes (38/47 done)
-[ ] current
+[x] current
 [x] downstream_sense
 [x] fear
 [ ] force_down

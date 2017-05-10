@@ -10,14 +10,14 @@
 [ ] add release tag
 [ ] publish to npm
 
-## add tests for more nodes (44/47 done)
+## add tests for more nodes (45/47 done)
 [x] current
 [x] downstream_sense
 [x] fear
 [ ] force_down
 [ ] force_up
 [x] net
-[ ] power_invert
+[x] power_invert
 [x] pump
 [x] range_switch
 [x] reverse_up

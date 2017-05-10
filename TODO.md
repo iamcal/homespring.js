@@ -16,7 +16,7 @@
 [x] fear
 [ ] force_down
 [ ] force_up
-[ ] net
+[x] net
 [ ] power_invert
 [x] pump
 [ ] range_switch

@@ -20,7 +20,7 @@
 [ ] power_invert
 [x] pump
 [ ] range_switch
-[ ] reverse_up
+[x] reverse_up
 [x] upstream_killing_device
 [x] upstream_sense
 [x] waterfall

@@ -10,7 +10,7 @@
 [ ] add release tag
 [ ] publish to npm
 
-## add tests for more nodes (37/47 done)
+## add tests for more nodes (38/47 done)
 [ ] current
 [x] downstream_sense
 [x] fear
@@ -26,5 +26,5 @@
 [x] waterfall
 [ ] young_range_sense
 [ ] young_range_switch
-[ ] young_sense
+[x] young_sense
 

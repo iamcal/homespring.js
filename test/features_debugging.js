@@ -39,5 +39,22 @@ describe("feature: debugging", function(){
 		expect(s[6][0]+'/'+s[6][1]).toBe("Hello World!\\n:w/homeless:young:up");
 		expect(s[7][0]+'/'+s[7][1]).toBe("Hello World!\\n:w/homeless:mature:down");
 	});
+
+	it("dumpState outputs stuff", function(){
+
+		var old_log = console.log;
+		var output = "";
+		console.log = function(str){
+			output += str+"\n";
+		};
+
+		var p = new HS.Program("Universe bear hatchery Hello. World!.\n Powers   marshy marshy snowmelt");
+		p.tick();
+
+		p.dumpState();
+		expect(output).toContain('World state');
+		expect(output).toContain('snowmelt');
+		expect(output).toContain('homeless:young:up');
+	});
 });
 

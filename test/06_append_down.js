@@ -47,6 +47,20 @@ describe("keyword: append_down", function(){
 		expect(s2.dead).toBe(true);
 	});
 
+	it("ignores upstream salmon", function(){
+
+		var p = new HS.Program('one append. down two');
+
+		var s1 = new HS.Salmon(p, 'a', HS.const.YOUNG, HS.const.UPSTREAM);
+
+		p.findFirstNode('one').fishEnters(s1);
+
+		p.tick();
+
+		expect(s1.name).toBe('a');
+		expect(s1.dead).toBe(false);
+	});
+
 	it("test program one - two children", function(){
 
 		var p = new HS.Program('universe append. down bear hatchery powers abc     bear hatchery powers def     marshy marshy marshy my snowmelt');

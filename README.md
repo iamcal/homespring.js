@@ -140,7 +140,7 @@ To allow this interpreter to correctly run example code, several changes and cla
 * `split` adds the new fish to the bottom of the list, so `['ab', 'cd']` becomes `['a','b','c','d']`
 * the snow tick is propogated pre-order, not post-order
 * the water tick is propogated pre-order, not post-order
-* a double-period creates a blank token without consuming the second period
+* when a valid token can't be produced, create a blank token and advance the parser by one character
 * a token can't start with a period
 * a blank token that would traverse tree-building beyond the root node adds a blank token as a child of the root node instead
 * salmon created in the `hatchery` are young, not mature

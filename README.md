@@ -76,8 +76,8 @@ this, the method will return immediately. You will need to hook up a termination
 to watch for program completion. Output is not returned, so the callback must be used.
 
 `tick()` synchronously executes a single tick of the program, then returns. This can be used for
-building an interactive debugger. Callbacks must be used for input and output. Termination can
-be detected either via a callback or checking the `.terminated` property.
+building an interactive debugger. Callbacks must be used for output. Termination can be detected 
+either via a callback or checking the `.terminated` property.
 
 
 ### Callbacks
@@ -107,11 +107,11 @@ The tick start and end callbacks are called as each execution step starts and en
 The `input` property is used to supply input to the program. See `bin/hs.js` for an
 example of how to hook this up to an interactive process.
 
-The `terminated` property is set to true when the program eaches the end of execution
+The `terminated` property is set to true when the program reaches the end of execution
 or reaches `max_ticks` number of ticks.
 
 The `tickNum` property identifies the last tick to start. This is set to zero when
-a program is created, and increment just before `onTickStart()` is called.
+a program is created, and incremented just before `onTickStart()` is called.
 
 
 ### Nodes and Salmon

@@ -1,6 +1,6 @@
 ## general
 [ ] fix examples: reverse 1+2 maybe work - not sure what they're _supposed_ to do
-[ ] drive up test coverage
+[x] drive up test coverage
 [ ] document interface to nodes and salmon
 
 ## make public
@@ -10,12 +10,12 @@
 [ ] add release tag
 [ ] publish to npm
 
-## add tests for more nodes (45/47 done)
+## add tests for more nodes
 [x] current
 [x] downstream_sense
 [x] fear
-[ ] force_down
-[ ] force_up
+[x] force_down
+[x] force_up
 [x] net
 [x] power_invert
 [x] pump

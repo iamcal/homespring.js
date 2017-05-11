@@ -56,5 +56,21 @@ describe("feature: debugging", function(){
 		expect(output).toContain('snowmelt');
 		expect(output).toContain('homeless:young:up');
 	});
+
+	it("traceTicks mode outputs stuff", function(){
+
+		var old_log = console.log;
+		var output = "";
+		console.log = function(str){
+			output += str+"\n";
+		};
+
+		var p = new HS.Program("Universe bear hatchery Hello. World!.\n Powers   marshy marshy snowmelt", {
+			'traceTicks' : true
+		});
+		p.tick();
+
+		expect(output).toContain('starting snow tick');
+	});
 });
 

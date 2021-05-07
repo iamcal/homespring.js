@@ -1,6 +1,6 @@
 # homespring.js - A JavaScript interpreter for Homespring
 
-[![Build Status](https://travis-ci.org/iamcal/homespring.js.svg?branch=master)](https://travis-ci.org/iamcal/homespring.js)
+[![Build Status](https://github.com/iamcal/homespring.js/actions/workflows/build.yml/badge.svg)](https://github.com/iamcal/homespring.js/actions)
 [![Coverage Status](https://coveralls.io/repos/github/iamcal/homespring.js/badge.svg?branch=master)](https://coveralls.io/github/iamcal/homespring.js?branch=master)
 [![Known Vulnerabilities](https://snyk.io/test/github/iamcal/homespring.js/badge.svg)](https://snyk.io/test/github/iamcal/homespring.js)
 

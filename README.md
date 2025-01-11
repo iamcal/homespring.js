@@ -129,6 +129,7 @@ TODO...
 * Quin Kennedy's NodeJS version: https://github.com/quinkennedy/Homespring
 * Alternative syntax processor: https://github.com/benibela/home-river
 * My (partial) Perl implementation: http://search.cpan.org/dist/Language-Homespring/Homespring.pm
+* Martijn Arts' JS implementation: https://github.com/martijnarts/homespring-js
 
 
 ## Differences from spec

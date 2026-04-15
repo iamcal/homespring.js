@@ -103,6 +103,7 @@ The tick start and end callbacks are called as each execution step starts and en
     program.input
     program.terminated
     program.tickNum
+    program.events
 
 The `input` property is used to supply input to the program. See `bin/hs.js` for an
 example of how to hook this up to an interactive process.
@@ -112,6 +113,77 @@ or reaches `max_ticks` number of ticks.
 
 The `tickNum` property identifies the last tick to start. This is set to zero when
 a program is created, and incremented just before `onTickStart()` is called.
+
+The `events` property contains an array of event objects generated during the most
+recent tick. It is cleared at the start of each tick. See the Events section below
+for details.
+
+
+### Events
+
+After each call to `tick()`, the `program.events` array contains a log of everything
+that happened during that tick. This is useful for building visualizations that can
+animate salmon movement, show deaths, and display spawning behavior.
+
+Each event is an object with a `type` property and additional fields depending on the
+type:
+
+#### `move` — Salmon moved between nodes
+
+    { type: 'move', salmon: <uid>, from: <nodeUid>, to: <nodeUid> }
+
+Emitted when a salmon (upstream or downstream) moves from one node to an adjacent
+node in the river system.
+
+#### `create` — New salmon created
+
+    { type: 'create', salmon: <uid>, node: <nodeUid>, source: <string> }
+
+Emitted when a new salmon is added to the river system. The `source` field indicates
+how it was created:
+
+  * `'hatchery'` — created by a powered hatchery node during the fish hatch tick.
+  * `'input'` — created from program input during the input tick.
+
+#### `spawn` — Salmon spawned
+
+    { type: 'spawn', salmon: <uid>, child: <childUid>, node: <nodeUid> }
+
+Emitted when an upstream salmon spawns. The spawning salmon (`salmon`) becomes mature
+and changes direction to downstream. A new young downstream salmon (`child`) is
+created at the same node with the node's name.
+
+#### `die` — Salmon killed
+
+    { type: 'die', salmon: <uid>, node: <nodeUid>, cause: <string> }
+
+Emitted when a salmon is killed by a node. The `cause` field indicates what killed it:
+
+  * `'bear'` — a bear node ate a mature salmon.
+  * `'bird'` — a bird node ate a young salmon.
+
+#### `output` — Salmon exited the river
+
+    { type: 'output', salmon: <uid>, node: <nodeUid>, name: <string> }
+
+Emitted when a downstream salmon reaches the mouth of the river (the root node has
+no parent). The salmon's name is printed as output. The `name` field contains the
+output string.
+
+#### Example
+
+    var program = new HS.Program('Universe bear hatchery Hello. World!.\n Powers   marshy marshy snowmelt');
+    program.tick();
+    console.log(program.events);
+    // [
+    //   { type: 'create', salmon: 1, node: 3, source: 'hatchery' }
+    // ]
+    program.tick();
+    console.log(program.events);
+    // [
+    //   { type: 'move', salmon: 1, from: 3, to: 4 },
+    //   { type: 'create', salmon: 2, node: 3, source: 'hatchery' }
+    // ]
 
 
 ### Nodes and Salmon

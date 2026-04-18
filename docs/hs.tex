@@ -65,6 +65,7 @@ chosen `e', `w', or any of the other character in that word? Homespring's system
 Homespring offers one (1) meta-character, namely, the period (`.').
 To include a newline\footnote{A newline character causes a token to end even if it is escaped. Therefore it is impossible to include a newline except at the end of a token.} or a space in a token, precede it with a period.
 To include a period in a token, precede it with a space. It is not possible to start a token with a period.
+If a period precedes any character other than a space or a newline, it terminates the previous token (if any) and produces a blank token.
 The use of tabs is discouraged, as it is not possible in HOtMEfSPRIbNG.
 
 \subsubsection{Paradox}
@@ -100,7 +101,11 @@ In a bold and dynamic move, Homespring has only a single structure which is used
 
 \subsection{The Ideal Approach}
 
-The tokens of a Homespring program are automatically formed into a tree structure, with the first token as the root, and the rest added one branch at a time. Blank tokens are used to jump up in the tree. By these simple rules, the program
+The tokens of a Homespring program are automatically formed into a tree structure, with the first token as the root, and the rest added one branch at a time.
+Blank tokens are used to jump up in the tree.
+A blank token that would raverse tree-building beyond the root node adds a blank token as a child of the root token instead.
+
+By these simple rules, the program
 \begin{verbatim}
 a b c  d e   f g    h i
 \end{verbatim}

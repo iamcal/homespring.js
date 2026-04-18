@@ -214,7 +214,7 @@ examples and the clafify some undefined behaviors.
 
 The updated 2026 spec has the following important changes:
 
-* when a valid token can't be produced, create a blank token and advance the parser by one character
+* when a valid token can't be produced, push the current token (if any), create a blank token and advance the parser by one character
 * a token can't start with a period
 * a blank token that would traverse tree-building beyond the root node adds a blank token as a child of the root node instead
 * the snow tick is propogated pre-order, not post-order

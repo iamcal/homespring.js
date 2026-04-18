@@ -7,7 +7,7 @@ Homespring (or HOtMEfSPRIbNG) is the pinnacle of programming language design.
 With this interpreter you can finally use Homespring code in your browser to
 make any webpage more dynamic.
 
-This JavaScript interpreter aims to be compliant with the [2026 Updated Language Standard](docs/Homespring-Updated-Language-Standard.pdf).
+This JavaScript interpreter fully implements [2026 Updated Language Standard](docs/Homespring-Updated-Language-Standard.pdf) and is capable of running all known Homespring programs.
 
 
 ## Example

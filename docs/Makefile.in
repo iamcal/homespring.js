@@ -1,0 +1,10 @@
+all: hs.pdf
+
+hs.pdf: hs.tex
+	latexmk -pdf hs.tex
+	cp hs.pdf Homespring-Updated-Language-Standard.pdf
+
+clean:
+	rm -f hs.pdf hs.aux hs.log
+
+install:

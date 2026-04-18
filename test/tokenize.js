@@ -1,73 +1,68 @@
 describe("tokenizer", function(){
 
-	for (var i=1; i<=2; i++){
+	var p = new HS.Program('');
 
-		describe(i==1 ? 'string mode' : 'rx mode', function(){
+	it("tokenizes simple tokens", function(){
 
-			var p = new HS.Program('', {
-				'tokenizer' : (i==1 ? HS.const.TOKENIZE_STR : HS.const.TOKENIZE_RX)
-			});
+		expect(p.tokenize('a b c d')).toEqual(['a','b','c','d']);
+		expect(p.tokenize("a\nb")).toEqual(['a','b']);
+	});
 
-			it("tokenizes simple tokens", function(){
+	it("tokenizes blank tokens", function(){
 
-				expect(p.tokenize('a b c d')).toEqual(['a','b','c','d']);
-				expect(p.tokenize("a\nb")).toEqual(['a','b']);
-			});
+		expect(p.tokenize('a  b')).toEqual(['a','','b']);
+	});
 
-			it("tokenizes blank tokens", function(){
+	it("understands leading and trailing blanks", function(){
 
-				expect(p.tokenize('a  b')).toEqual(['a','','b']);
-			});
+		expect(p.tokenize(' a')).toEqual(['', 'a']);
+		expect(p.tokenize('a ')).toEqual(['a']);
+		expect(p.tokenize('a  ')).toEqual(['a', '']);
+	});
 
-			it("understands leading and trailing blanks", function(){
+	it("understands the arcane escaping rules", function(){
 
-				expect(p.tokenize(' a')).toEqual(['', 'a']);
-				expect(p.tokenize('a ')).toEqual(['a']);
-				expect(p.tokenize('a  ')).toEqual(['a', '']);
-			});
+		expect(p.tokenize('a. b')).toEqual(['a b']);
 
-			it("understands the arcane escaping rules", function(){
+		expect(p.tokenize("a.\nb")).toEqual(["a\n", 'b']); // newlines always terminate tokens
+		expect(p.tokenize("a.\n.\nb")).toEqual(["a\n", "\n", 'b']);
+		expect(p.tokenize("a.\n\nb")).toEqual(["a\n", '', 'b']);
 
-				expect(p.tokenize('a. b')).toEqual(['a b']);
+		expect(p.tokenize('a .b')).toEqual(['a.b']);
+	});
 
-				expect(p.tokenize("a.\nb")).toEqual(["a\n", 'b']); // newlines always terminate tokens
-				expect(p.tokenize("a.\n.\nb")).toEqual(["a\n", "\n", 'b']);
-				expect(p.tokenize("a.\n\nb")).toEqual(["a\n", '', 'b']);
+	it("don't allow invalid productions", function(){
 
-				expect(p.tokenize('a .b')).toEqual(['a.b']);
-			});
+		expect(function(){ p.tokenize('a . b') }).toThrow();
+		expect(function(){ p.tokenize('a. .b') }).toThrow();
 
-			it("don't allow invalid productions", function(){
+		expect(function(){ p.tokenize("a\tb") }).toThrow();
+	});
 
-				expect(function(){ p.tokenize('a . b') }).toThrow();
-				expect(function(){ p.tokenize('a. .b') }).toThrow();
+	it("tokenizes example progams", function(){
 
-				expect(function(){ p.tokenize("a\tb") }).toThrow();
-			});
+		expect(p.tokenize('Hello,.   World ..\n')).toEqual(['Hello, ', '', 'World.\n']);
 
-			it("tokenizes example progams", function(){
+		expect(p.tokenize('a b c  d e   f g    h i')).toEqual(['a', 'b', 'c', '', 'd', 'e', '', '', 'f', 'g', '', '', '', 'h', 'i']);
 
-				expect(p.tokenize('Hello,.   World ..\n')).toEqual(['Hello, ', '', 'World.\n']);
+		expect(p.tokenize('Universe bear hatchery Hello. World!.\n Powers   marshy marshy snowmelt')).toEqual([
+			'Universe', 'bear', 'hatchery', 'Hello World!\n', '', 'Powers', '', '', 'marshy', 'marshy', 'snowmelt'
+		]);
+	});
 
-				expect(p.tokenize('a b c  d e   f g    h i')).toEqual(['a', 'b', 'c', '', 'd', 'e', '', '', 'f', 'g', '', '', '', 'h', 'i']);
+	it("periods which don't escape a space or newline create a blank token", function(){
 
-				expect(p.tokenize('Universe bear hatchery Hello. World!.\n Powers   marshy marshy snowmelt')).toEqual([
-					'Universe', 'bear', 'hatchery', 'Hello World!\n', '', 'Powers', '', '', 'marshy', 'marshy', 'snowmelt'
-				]);
-			});
+		// 2 dots each become a blank token
+		expect(p.tokenize('foo bar..baz')).toEqual(['foo', 'bar', '', '', 'baz']);
 
-			it("each character of an invalid production creates a blank token", function(){
+		// same thing but with 3 dots
+		expect(p.tokenize('foo bar...baz')).toEqual(['foo', 'bar', '', '', '', 'baz']);
 
-				// each character of `bar..` turns into a blank token. after that, `baz` is a valid token
-				expect(p.tokenize('foo bar..baz')).toEqual(['foo', '', '', '', '', '', 'baz']);
+		// or even just one
+		expect(p.tokenize('foo bar.baz')).toEqual(['foo', 'bar', '', 'baz']);
 
-				// same thing but with 3 dots
-				expect(p.tokenize('foo bar...baz')).toEqual(['foo', '', '', '', '', '', '', 'baz']);
+		// bad sequence followed by a valid escape sequence
+		expect(p.tokenize('foo.. bar')).toEqual(['foo', '', ' bar']);
+	});
 
-				// or even just one
-				expect(p.tokenize('foo bar.baz')).toEqual(['foo', '', '', '', '', 'baz']);
-			});
-
-		});
-	}
 });

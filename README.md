@@ -51,7 +51,7 @@ The source of the program must be passed when creating a new program object. The
 is tokenized at the river-system built at this time. Exceptions are thrown for invalid
 programs. The optional `options` argument must contain a hash of possible options:
 
-  * `strictMode` (bool) : controls whether programs can traverse beyond their root (default: false).
+  * `strictMode` (bool) : controls whether an exception is thrown when programs traverse beyond their root or contain invalid escape sequences (default: false).
   * `traceTicks` (bool) : controls whether certain debug output is shown, such as start and end of each tick (default: false).
 
 
@@ -214,7 +214,7 @@ examples and the clafify some undefined behaviors.
 
 The updated 2026 spec has the following important changes:
 
-* when a valid token can't be produced, push the current token (if any), create a blank token and advance the parser by one character
+* when an invalid escape sequence is encountered (a period followed by anything other than a newline or space), push the current token (if any), add a blank token and advance the parser by one character
 * a token can't start with a period
 * a blank token that would traverse tree-building beyond the root node adds a blank token as a child of the root node instead
 * the snow tick is propogated pre-order, not post-order

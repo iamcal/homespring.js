@@ -2,14 +2,12 @@
 
 [![Build Status](https://github.com/iamcal/homespring.js/actions/workflows/build.yml/badge.svg)](https://github.com/iamcal/homespring.js/actions)
 [![Coverage Status](https://coveralls.io/repos/github/iamcal/homespring.js/badge.svg?branch=master)](https://coveralls.io/github/iamcal/homespring.js?branch=master)
-[![Known Vulnerabilities](https://snyk.io/test/github/iamcal/homespring.js/badge.svg)](https://snyk.io/test/github/iamcal/homespring.js)
 
 Homespring (or HOtMEfSPRIbNG) is the pinnacle of programming language design.
 With this interpreter you can finally use Homespring code in your browser to
 make any webpage more dynamic.
 
-This JavaScript interpreter aims to be compliant with the 2005 version of the
-[language standard](http://bunny.xeny.net/linked/Homespring-Proposed-Language-Standard.pdf).
+This JavaScript interpreter aims to be compliant with the [2026 Updated Language Standard](docs/Homespring-Updated-Language-Standard.pdf).
 
 
 ## Example
@@ -190,20 +188,7 @@ output string.
 TODO...
 
 
-
-## Other links
-
-* Esolang page: https://esolangs.org/wiki/Homespring
-* Mirror of Jeff Binder's original distribution: https://github.com/iamcal/Homespring
-* Joe Neeman's homepage: http://xeny.net/Homespring
-* Joe Neeman's Ocaml version: https://github.com/jneem/homespring
-* Quin Kennedy's NodeJS version: https://github.com/quinkennedy/Homespring
-* Alternative syntax processor: https://github.com/benibela/home-river
-* My (partial) Perl implementation: http://search.cpan.org/dist/Language-Homespring/Homespring.pm
-* Martijn Arts' JS implementation: https://github.com/martijnarts/homespring-js
-
-
-## Differences from spec
+## Language Spec Versions
 
 This interpreter introduces a new version of the language standard, updated to allow a conformant interpreter to run all of the
 examples and the clafify some undefined behaviors.
@@ -227,3 +212,16 @@ The updated 2026 spec has the following important changes:
 * the `young bear` starts eating at the second salmon, not the first
 * in the fish up tick, if an upstream salmon name matches the node name, it spawns immediately. this happens only once the salmon
   is ready to leave, so on the second tick after entering a `shallows` or `rapids` node.
+
+
+## Other Links
+
+* Esolang page: https://esolangs.org/wiki/Homespring
+* Mirror of Jeff Binder's original distribution: https://github.com/iamcal/Homespring
+* Joe Neeman's homepage: http://xeny.net/Homespring
+* Joe Neeman's Ocaml version: https://github.com/jneem/homespring
+* Quin Kennedy's NodeJS version: https://github.com/quinkennedy/Homespring
+* Alternative syntax processor: https://github.com/benibela/home-river
+* My (partial) Perl implementation: http://search.cpan.org/dist/Language-Homespring/Homespring.pm
+* Martijn Arts' JS implementation: https://github.com/martijnarts/homespring-js
+

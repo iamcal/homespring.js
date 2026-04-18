@@ -1,7 +1,7 @@
 \documentclass[10pt]{article}
 
-\title{Homespring Proposed Language Standard}
-\author{Joe Neeman \and Jeff Binder}
+\title{Homespring Updated Language Standard}
+\author{Cal Henderson, Joe Neeman \& Jeff Binder}
 
 \begin{document}
 
@@ -14,27 +14,37 @@
 ``Because programming isn't like a river, but it damn well ought to be.''
 
 \subsection{History}
-The original version of this document was included with Jeff Binder's Homespring interpreter and contained many
-omissions and ambiguities. This revised version was created by Joe Neeman in conjunction with his improved interpreter.
-The language documented here complies with the behaviour documented in the official language standard. It also
-correctly runs all examples provided with the official interpreter. However, it does \emph{not} proscribe the same
-behaviour as the official interpreter in every case. That is, the documented behaviour of this standard does not comply
-with the undocumented behaviour of the official interpreter except to the extent that it was necessary in order for
-the official examples to work.
+The original version of this document was included with Jeff Binder's Homespring interpreter and contained many omissions and ambiguities.
+A revised version was created by Joe Neeman in conjunction with his improved interpreter.
+This version was created by Cal Henderson to correct a handful of mistakes and ambiguities.
+The language documented here complies with the behaviour documented in the official language standard.
+It also correctly runs all examples provided with the official interpreter.
+However, it does \emph{not} proscribe the same behaviour as the official interpreter in every case.
+That is, the documented behaviour of this standard does not comply with the undocumented behaviour of the official interpreter
+except to the extent that it was necessary in order for the official examples to work.
 
 A Homespring interpreter that matches this documentation is included with this document.
 
 \subsection{Motivation}
 
-One of the problems with current programming languages is that they're too abstract. Although they frequently use metaphors to explain their concepts to users, these metaphors do not hold up very well in the long run. Enter Homespring, or Hatchery Oblivion through Marshy Energy from Snowmelt Powers Rapids Insulated but Not Great. It is also sometimes referred to as HOtMEfSPRIbNG.
+One of the problems with current programming languages is that they're too abstract.
+Although they frequently use metaphors to explain their concepts to users, these metaphors do not hold up very well in the long run. 
+Enter Homespring, or Hatchery Oblivion through Marshy Energy from Snowmelt Powers Rapids Insulated but Not Great.
+It is also sometimes referred to as HOtMEfSPRIbNG.
 
 \subsubsection{Revolution Information}
 
-So what we have here is a new programming paradigm: Metaphor Oriented Programming, or MOP. MOP languages are built around a unified metaphor, and stick rigorously to its real-world properties and limits. This allows languages to be created that are both high-level and simple, offering exciting new abstractions and ideas that are familiar as they are powerful. As such, Homespring disposes of outmoded concepts such as classes, sequential execution, evaluation, assignment, binding, variables, numbers, and calculations.
+So what we have here is a new programming paradigm: Metaphor Oriented Programming, or MOP.
+MOP languages are built around a unified metaphor, and stick rigorously to its real-world properties and limits.
+This allows languages to be created that are both high-level and simple, offering exciting new abstractions and ideas that are familiar as they are powerful.
+As such, Homespring disposes of outmoded concepts such as classes, sequential execution, evaluation, assignment, binding, variables, numbers, and calculations.
 
 \subsubsection{Consequences of Failure to Learn}
 
-The Homespring language is the archetype of MOP, and it shows off all aspects of this revolutionary new concept. Learn it now or be left behind! Your current favourite language stands no chance! Now it is time to learn HOtMEfSPRIbNG, your next favourite language!
+The Homespring language is the archetype of MOP, and it shows off all aspects of this revolutionary new concept.
+Learn it now or be left behind!
+Your current favourite language stands no chance!
+Now it is time to learn HOtMEfSPRIbNG, your next favourite language!
 
 \section{Lexical Structure}
 
@@ -42,21 +52,30 @@ Before we get into the wonderful new concepts that you are impatiently awaiting,
 
 \subsection{Tokens}
 
-Homespring has exactly one (1) types of tokens: tokens. This simplicity will be greatly appreciated, once you try it. Tokens consist of zero (0) or a number greater than zero ($>$ 0) of non-whitespace characters, separated by one (1) character of whitespace.
+Homespring has exactly one (1) types of tokens: tokens.
+This simplicity will be greatly appreciated, once you try it.
+Tokens consist of zero (0) or a number greater than zero ($>$ 0) of non-whitespace characters, separated by one (1) character of whitespace.
 
-Many inferior languages include highly complex escape sequences and quoting rules. For example, how is one expected to remember that the `n' in \\n stands for `newline', when the inept designers who thought of this could just as well have chosen `e', `w', or any of the other character in that word? Homespring's system is far superior, as well as being intellectually stimulating.
+Many inferior languages include highly complex escape sequences and quoting rules.
+For example, how is one expected to remember that the `n' in \\n stands for `newline', when the inept designers who thought of this could just as well have
+chosen `e', `w', or any of the other character in that word? Homespring's system is far superior, as well as being intellectually stimulating.
 
 \subsubsection{Escaping}
 
-Homespring offers one (1) meta-character, namely, the period (`.'). To include a newline\footnote{A newline character causes a token to end even if it is escaped. Therefore it is impossible to include a newline except at the end of a token.} or a space in a token, precede it with a period. To include a period in a token, precede it with a space. The use of tabs is discouraged, as it is not possible in HOtMEfSPRIbNG.
+Homespring offers one (1) meta-character, namely, the period (`.').
+To include a newline\footnote{A newline character causes a token to end even if it is escaped. Therefore it is impossible to include a newline except at the end of a token.} or a space in a token, precede it with a period.
+To include a period in a token, precede it with a space. It is not possible to start a token with a period.
+The use of tabs is discouraged, as it is not possible in HOtMEfSPRIbNG.
 
 \subsubsection{Paradox}
 
-The sequences `  . ' and `. .' are required to cause a causality paradox in all conforming implementations. As such, there are no conforming implementations.
+The sequences `  . ' and `. .' are required to cause a causality paradox in all conforming implementations.
+As such, there are no conforming implementations.
 
 \subsubsection{Example}
 
-Although Homespring's lexical rules are so simple that you don't need an example, one is provided anyway as a service to our customers. The following sequence:
+Although Homespring's lexical rules are so simple that you don't need an example, one is provided anyway as a service to our customers.
+The following sequence:
 
 Hello,.   World ..
 
@@ -150,16 +169,17 @@ follows:
 
 \subsection{Snow tick}
 
-In the snow tick, the snow state of each node is updated. A node becomes snowy if it is not currently blocking snowmelts
-and if one of its children is snowy. The snow tick is propagated in a post-order fashion.
+In the snow tick, the snow state of each node is updated.
+A node becomes snowy if it is not currently blocking snowmelts and if one of its children is snowy.
+The snow tick is propagated in a pre-order fashion.
 
-Certain nodes will be destroyed when snowmelt reaches them. A node that is destroyed loses its abilities and its name
-(its name becomes ``'').
+Certain nodes will be destroyed when snowmelt reaches them.
+A node that is destroyed loses its abilities, but keeps its name.
 
 \subsection{Water tick}
 
 In the water tick, the water state of each node is updated. A node becomes watered if it is not currently blocking water
-and if one of its children is watered. The water tick is propagated in a post-order fashion.
+and if one of its children is watered. The water tick is propagated in a pre-order fashion.
 
 \subsection{Power tick}
 
@@ -197,13 +217,15 @@ This tick propagates in a pre-order fashion.
 \subsubsection{Fish tick up}
 
 This part of the fish tick only affects upstream salmon. For each upstream salmon, an in-order search of the river system
-is conducted in order\footnote{heh heh. Sorry.} to find a river node with the same name as the salmon. If there is such
-a node and the salmon is not prevented from moving towards it, the salmon moves towards that node. If there is no such node
-or if the salmon is prevented from moving towards that node, the salmon will attempt to move (in order) to each child of
-the current node. If the salmon cannot move to any child of the current node or if there are no children of the current
-node, the salmon will spawn at the current node.
+is conducted in order\footnote{heh heh. Sorry.} to find a river node with the same name as the salmon.
+If the current node matches the salmon name, it spawns at the current node.
+If there is such a node and the salmon is not prevented from moving towards it, the salmon moves towards that node.
+If there is no such node or if the salmon is prevented from moving towards that node, the salmon will attempt to move (in order) to each child of the current node.
+If the salmon cannot move to any child of the current node or if there are no children of the current node, the salmon will spawn at the current node.
 
-When a salmon spawns, it becomes mature and its direction becomes downstream. A new salmon is created at the current node.
+When a salmon spawns, it becomes mature and its direction becomes downstream.
+Spawning happens only when the upstream salmon is ready to leave the node; on the second tick after entering a shallows or rapids node.
+A new salmon is created at the current node.
 The new salmon is young, downstream and its name is the name of the current node.
 
 This tick propagates in a post-order fashion.
@@ -246,11 +268,10 @@ This is a list of all the node types that can be located on rivers.
 
 \subsubsection{hatchery}
 
-When powered, creates a mature, upstream salmon named ``homeless''. Operates during the
-fish tick hatch step.
+When powered, creates a young, upstream salmon named ``homeless''. Operates during the
+fish tick hatch step. Can be destroyed by snowmelt.
 
 \subsubsection{hydro power}
-
 
 Creates electricity when watered. Can be destroyed by snowmelt.
 
@@ -289,9 +310,8 @@ For each salmon, create a young, downstream salmon with the same name.
 
 \subsubsection{young bear}
 
-Eats every other mature salmon (the first mature salmon gets eaten, the second one doesn't, etc.). Young salmon are moved
-to the beginning of the list because they don't have to take the
-time to evade the bear.
+Eats every other mature salmon (the first mature salmon doesn't get eaten, the second one does, etc.).
+Young salmon are moved to the beginning of the list because they don't have to take the time to evade the bear.
 
 \subsubsection{bird}
 
@@ -358,12 +378,12 @@ Very blocks salmon when powered.
 \subsubsection{reverse up}
 
 For each downstream salmon that arrived from the second child, move it to the first child unless it is prevented from moving
-there.
+there (and change its direction to upstream).
 
 \subsubsection{reverse down}
 
 For each downstream salmon that arrived from the first child, move it to the second child unless it is prevented from moving
-there.
+there (and change its direction to upstream).
 
 \subsubsection{time}
 
@@ -438,7 +458,7 @@ If destroyed by snowmelt, blocks snowmelt and water and very blocks salmon.
 
 \subsubsection{split}
 
-Splits each salmon into a new salmon for each letter in the original salmon's name. The original salmon are destroyed.
+Splits each salmon into a new salmon for each letter in the original salmon's name. The original salmon are destroyed. The new salmon are added to the bottom of the list.
 
 \subsubsection{range switch}
 

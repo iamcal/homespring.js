@@ -53,7 +53,6 @@ programs. The optional `options` argument must contain a hash of possible option
 
   * `strictMode` (bool) : controls whether programs can traverse beyond their root (default: false).
   * `traceTicks` (bool) : controls whether certain debug output is shown, such as start and end of each tick (default: false).
-  * `tokenizer` (int) : controls which tokenizer to use. this will probably be removed in future versions.
 
 
 ### Execution

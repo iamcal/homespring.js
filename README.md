@@ -209,7 +209,7 @@ TODO...
 The updated spec (http://xeny.net/Homespring) contains some mistakes or omissions.
 To allow this interpreter to correctly run example code, several changes and clatifications needed to be made:
 
-* `reverse_down` changes salmon direction to upstream
+* `reverse up` and `reverse down` change salmon direction to upstream if they're able to move them
 * `split` adds the new fish to the bottom of the list, so `['ab', 'cd']` becomes `['a','b','c','d']`
 * the snow tick is propogated pre-order, not post-order
 * the water tick is propogated pre-order, not post-order

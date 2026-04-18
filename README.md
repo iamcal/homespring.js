@@ -206,19 +206,25 @@ TODO...
 
 ## Differences from spec
 
-The updated spec (http://xeny.net/Homespring) contains some mistakes or omissions.
-To allow this interpreter to correctly run example code, several changes and clatifications needed to be made:
+This interpreter introduces a new version of the language standard, updated to allow a conformant interpreter to run all of the
+examples and the clafify some undefined behaviors.
 
-* `reverse up` and `reverse down` change salmon direction to upstream if they're able to move them
-* `split` adds the new fish to the bottom of the list, so `['ab', 'cd']` becomes `['a','b','c','d']`
-* the snow tick is propogated pre-order, not post-order
-* the water tick is propogated pre-order, not post-order
+* [Jeff Binder's Original 2003 Spec](docs/Homespring-Official-Language-Standard.pdf)
+* [Joe Neeman's Updated 2005 Spec](docs/Homespring-Proposed-Language-Standard.pdf)
+* [My Updated 2026 Spec](docs/Homespring-Updated-Language-Standard.pdf)
+
+The updated 2026 spec has the following important changes:
+
 * when a valid token can't be produced, create a blank token and advance the parser by one character
 * a token can't start with a period
 * a blank token that would traverse tree-building beyond the root node adds a blank token as a child of the root node instead
+* the snow tick is propogated pre-order, not post-order
+* the water tick is propogated pre-order, not post-order
 * salmon created in the `hatchery` are young, not mature
 * the `hatchery` node can be destroyed
+* when a node is destroyed by snowmelt, it keeps its name (rather than having the name set to "")
+* `reverse up` and `reverse down` change salmon direction to upstream if they're able to move them
+* `split` adds the new fish to the bottom of the list, so `['ab', 'cd']` becomes `['a','b','c','d']`
 * the `young bear` starts eating at the second salmon, not the first
 * in the fish up tick, if an upstream salmon name matches the node name, it spawns immediately. this happens only once the salmon
   is ready to leave, so on the second tick after entering a `shallows` or `rapids` node.
-* when a node is destroyed by snowmelt, it keeps its name (rather than having the name set to "")

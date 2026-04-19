@@ -183,12 +183,7 @@ output string.
     // ]
 
 
-### Nodes and Salmon
-
-TODO...
-
-
-## Language Spec Versions
+## Language Specifications
 
 This interpreter introduces a new version of the language standard, updated to allow a conformant interpreter to run all of the
 examples and the clarify some undefined behaviors.

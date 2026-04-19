@@ -1,7 +1,7 @@
 {
   "name": "homespring.js",
   "description": "A JS Homespring interpreter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "lib/homespring.js",
   "devDependencies": {
     "jasmine-core": "~3.7",

@@ -1,6 +1,5 @@
 {
   "name": "homespring.js",
-  "version": "1.0.0",
   "description": "A JS Homespring interpreter",
   "main": "lib/homespring.js",
   "devDependencies": {

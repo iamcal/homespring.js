@@ -10,6 +10,7 @@ make any webpage more dynamic.
 
 This JavaScript interpreter fully implements [2026 Updated Language Standard](docs/Homespring-Updated-Language-Standard.pdf) and is capable of running all known Homespring programs.
 
+You can try it out using the online interactive debugger at [homespring.cloud](https://homespring.cloud/).
 
 ## Example
 
@@ -214,10 +215,10 @@ The updated 2026 spec has the following important changes:
 
 * Esolang page: https://esolangs.org/wiki/Homespring
 * Mirror of Jeff Binder's original distribution: https://github.com/iamcal/Homespring
-* Joe Neeman's homepage: http://xeny.net/Homespring
+* Jaons Grossman's homepage: https://xeny.net/homespring.html
 * Joe Neeman's Ocaml version: https://github.com/jneem/homespring
 * Quin Kennedy's NodeJS version: https://github.com/quinkennedy/Homespring
 * Alternative syntax processor: https://github.com/benibela/home-river
 * My (partial) Perl implementation: http://search.cpan.org/dist/Language-Homespring/Homespring.pm
 * Martijn Arts' JS implementation: https://github.com/martijnarts/homespring-js
-
+* My online interactive debugger: https://homespring.cloud/

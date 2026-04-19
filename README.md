@@ -2,6 +2,7 @@
 
 [![Build Status](https://github.com/iamcal/homespring.js/actions/workflows/build.yml/badge.svg)](https://github.com/iamcal/homespring.js/actions)
 [![Coverage Status](https://coveralls.io/repos/github/iamcal/homespring.js/badge.svg?branch=master)](https://coveralls.io/github/iamcal/homespring.js?branch=master)
+<span class="badge-npmversion"><a href="https://npmjs.org/package/homespring.js" title="View this project on NPM"><img src="https://img.shields.io/npm/v/homespring.js.svg" alt="NPM version" /></a></span>
 
 Homespring (or HOtMEfSPRIbNG) is the pinnacle of programming language design.
 With this interpreter you can finally use Homespring code in your browser to

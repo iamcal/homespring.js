@@ -1,6 +1,7 @@
 {
   "name": "homespring.js",
   "description": "A JS Homespring interpreter",
+  "version": "1.0.0",
   "main": "lib/homespring.js",
   "devDependencies": {
     "jasmine-core": "~3.7",
@@ -31,8 +32,8 @@
   "homepage": "https://github.com/iamcal/homespring.js",
   "scripts": {
     "uglify": "echo \"/* $(npm -s run env echo '$npm_package_name') $(date +%Y-%m-%d) */\" > lib/homespring.min.js; ./node_modules/.bin/uglifyjs -c -m -- lib/homespring.js >> lib/homespring.min.js",
-    "test": "./node_modules/.bin/karma start karma.conf.js --single-run --log-level error",
-    "coverage": "./node_modules/.bin/karma start karma-cover.conf.js --single-run --log-level disable",
+    "test": "karma start karma.conf.js --single-run --log-level error",
+    "coverage": "karma start karma-cover.conf.js --single-run --log-level disable",
     "build": "npm run uglify && npm run test && npm run coverage"
   }
 }

@@ -211,15 +211,19 @@ The updated 2026 spec has the following important changes:
   is ready to leave, so on the second tick after entering a `shallows` or `rapids` node.
 
 
+## Other Interpreters
+
+* Mirror of Jeff Binder's original distribution: https://github.com/iamcal/Homespring
+* Joe Neeman's Ocaml implementation: https://github.com/jneem/homespring
+* Quin Kennedy's NodeJS implementation: https://github.com/quinkennedy/Homespring
+* My (partial) Perl implementation: http://search.cpan.org/dist/Language-Homespring/Homespring.pm
+* Martijn Arts' JS implementation: https://github.com/martijnarts/homespring-js
+* Addison Bean's Rust implementation: https://github.com/Addisonbean/Homespring-rs
+
 ## Other Links
 
 * Esolang page: https://esolangs.org/wiki/Homespring
-* Mirror of Jeff Binder's original distribution: https://github.com/iamcal/Homespring
 * Jason Grossman's homepage: https://xeny.net/homespring.html
-* Joe Neeman's Ocaml version: https://github.com/jneem/homespring
-* Quin Kennedy's NodeJS version: https://github.com/quinkennedy/Homespring
 * Alternative syntax processor: https://github.com/benibela/home-river
-* My (partial) Perl implementation: http://search.cpan.org/dist/Language-Homespring/Homespring.pm
-* Martijn Arts' JS implementation: https://github.com/martijnarts/homespring-js
 * My online interactive debugger: https://homespring.cloud/
 * James Thistlewood's web based visualizer: https://github.com/jthistle/homespring-visualizer

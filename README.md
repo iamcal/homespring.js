@@ -226,5 +226,6 @@ The updated 2026 spec has the following important changes:
 * Jason Grossman's homepage: https://xeny.net/homespring.html
 * Alternative syntax processor: https://github.com/benibela/home-river
 * My online interactive debugger: https://homespring.cloud/
+  * Source: https://github.com/iamcal/homespring.cloud
 * James Thistlewood's web based visualizer: https://github.com/jthistle/homespring-visualizer
 * Syntax highlighting package for Atom: https://github.com/foxfriends/language-homespring

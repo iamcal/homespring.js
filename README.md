@@ -222,3 +222,4 @@ The updated 2026 spec has the following important changes:
 * My (partial) Perl implementation: http://search.cpan.org/dist/Language-Homespring/Homespring.pm
 * Martijn Arts' JS implementation: https://github.com/martijnarts/homespring-js
 * My online interactive debugger: https://homespring.cloud/
+* James Thistlewood's web based visualizer: https://github.com/jthistle/homespring-visualizer

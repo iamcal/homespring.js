@@ -215,7 +215,7 @@ The updated 2026 spec has the following important changes:
 
 * Esolang page: https://esolangs.org/wiki/Homespring
 * Mirror of Jeff Binder's original distribution: https://github.com/iamcal/Homespring
-* Jaons Grossman's homepage: https://xeny.net/homespring.html
+* Jason Grossman's homepage: https://xeny.net/homespring.html
 * Joe Neeman's Ocaml version: https://github.com/jneem/homespring
 * Quin Kennedy's NodeJS version: https://github.com/quinkennedy/Homespring
 * Alternative syntax processor: https://github.com/benibela/home-river

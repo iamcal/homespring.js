@@ -222,6 +222,7 @@ The updated 2026 spec has the following important changes:
 
 ## Other Links
 
+* Jeff's (new) Homespring summary page: https://jeffreymbinder.net/208/homespring
 * Esolang page: https://esolangs.org/wiki/Homespring
 * Jason Grossman's homepage: https://xeny.net/homespring.html
 * Alternative syntax processor: https://github.com/benibela/home-river
